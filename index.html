@@ -2,123 +2,392 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Red 3D de personas</title>
+    <title>Red 3D de personas - Animaciones & Glassmorphism</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <style>
       body,html{
         margin:0;
         padding:0;
-        font-family:sans-serif;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         overflow:hidden;
       }
+
+      /* ===== ANIMACIONES CSS ===== */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes scaleIn {
+        from {
+          transform: scale(0.8);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInDown {
+        from {
+          transform: translateY(-30px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      /* ===== GLASSMORPHISM - Panel de Control ===== */
       #controles{
         position:fixed;
         top:10px;
         left:10px;
-        padding:8px 10px;
-        background:rgba(0,0,0,0.55);
-        border:1px solid #444;
-        border-radius:4px;
+        padding:12px 14px;
+        
+        /* Efecto glassmorphism */
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        border-radius: 12px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        
         font-size:12px;
         z-index:10;
         max-height:90vh;
         overflow:auto;
-        color:#eee;
+        color:#f1f5f9;
+        
+        /* Animación de entrada */
+        animation: slideIn 0.6s ease-out;
       }
+
+      #controles::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      #controles::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+      }
+
+      #controles::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+      }
+
+      #controles::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
       #controles label{
         display:block;
-        margin-bottom:4px;
+        margin-bottom:6px;
+        animation: fadeIn 0.8s ease-out;
       }
+
       #controles input[type=range]{
         width:150px;
+        cursor: pointer;
+        transition: all 0.3s ease;
       }
+
+      #controles input[type=range]:hover {
+        transform: scale(1.02);
+      }
+
+      #controles input[type=checkbox] {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+      }
+
+      #controles input[type=checkbox]:hover {
+        transform: scale(1.1);
+      }
+
       #controles span.valor{
         display:inline-block;
-        width:32px;
+        min-width:35px;
         text-align:right;
         margin-left:4px;
+        font-weight: 600;
+        color: #38bdf8;
+        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
       }
+
       #controles .fila{
-        margin-top:4px;
-        margin-bottom:4px;
+        margin-top:6px;
+        margin-bottom:6px;
+        animation: fadeIn 0.8s ease-out;
       }
+
       #propiedades .bloque-prop{
-        border-top:1px solid #555;
-        margin-top:4px;
-        padding-top:4px;
+        border-top:1px solid rgba(255, 255, 255, 0.15);
+        margin-top:6px;
+        padding-top:6px;
+        animation: slideInDown 0.5s ease-out;
       }
+
       #propiedades .titulo-prop{
         font-weight:bold;
-        margin-bottom:2px;
+        margin-bottom:3px;
+        color: #fbbf24;
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
       }
+
       #propiedades label{
         display:inline-block;
         margin-right:8px;
-        margin-bottom:2px;
-      }
-      #ayudaTeclas{
-        font-size:11px;
-        margin-top:6px;
-        color:#ccc;
+        margin-bottom:3px;
+        transition: color 0.2s ease;
       }
 
-      /* --- Modal 2D --- */
+      #propiedades label:hover {
+        color: #38bdf8;
+      }
+
+      #ayudaTeclas{
+        font-size:11px;
+        margin-top:8px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        color:#cbd5e1;
+        line-height: 1.5;
+        animation: fadeIn 1.2s ease-out;
+      }
+
+      /* ===== GLASSMORPHISM - Modal 2D ===== */
       #modalOverlay{
         position:fixed;
         top:0;
         left:0;
         width:100vw;
         height:100vh;
-        background:rgba(0,0,0,0.65);
+        background:rgba(0, 0, 0, 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         display:none;
         align-items:center;
         justify-content:center;
         z-index:20;
+        animation: fadeIn 0.3s ease-out;
       }
+
       #modalCaja{
-        background:#111;
-        border:1px solid #555;
-        border-radius:6px;
+        /* Efecto glassmorphism */
+        background: rgba(30, 41, 59, 0.85);
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.6);
+        
         max-width:600px;
         max-height:80vh;
         width:90%;
-        box-shadow:0 0 20px rgba(0,0,0,0.8);
-        color:#eee;
+        color:#f1f5f9;
         display:flex;
         flex-direction:column;
+        
+        /* Animación de entrada */
+        animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
       }
+
       #modalHeader{
-        padding:8px 10px;
-        border-bottom:1px solid #444;
+        padding:12px 16px;
+        border-bottom:1px solid rgba(255, 255, 255, 0.2);
         display:flex;
         justify-content:space-between;
         align-items:center;
-        font-size:14px;
-        background:#222;
+        font-size:15px;
+        background: rgba(51, 65, 85, 0.5);
+        border-radius: 16px 16px 0 0;
       }
+
       #modalTitulo{
         font-weight:bold;
+        font-size: 16px;
+        color: #38bdf8;
+        text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
       }
+
       #modalCerrar{
         cursor:pointer;
-        padding:2px 6px;
-        border-radius:3px;
-        border:1px solid #666;
-        background:#333;
+        padding:6px 12px;
+        border-radius:8px;
+        border:1px solid rgba(255, 255, 255, 0.3);
+        background: rgba(239, 68, 68, 0.2);
         font-size:12px;
+        color: #fecaca;
+        font-weight: 600;
+        transition: all 0.3s ease;
       }
+
       #modalCerrar:hover{
-        background:#555;
+        background: rgba(239, 68, 68, 0.4);
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
       }
+
+      #modalCerrar:active{
+        transform: scale(0.98);
+      }
+
       #modalContenido{
-        padding:10px;
+        padding:16px;
         overflow:auto;
-        font-size:13px;
-        line-height:1.4;
+        font-size:14px;
+        line-height:1.6;
+        animation: fadeIn 0.6s ease-out 0.2s backwards;
+      }
+
+      #modalContenido::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      #modalContenido::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+      }
+
+      #modalContenido::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+      }
+
+      #modalContenido::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      #modalContenido h2 {
+        color: #fbbf24;
+        margin-top: 0;
+        text-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+      }
+
+      #modalContenido strong {
+        color: #38bdf8;
+      }
+
+      /* ===== Loader animado ===== */
+      .loader {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border: 5px solid rgba(56, 189, 248, 0.2);
+        border-top: 5px solid #38bdf8;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        z-index: 100;
+        display: none;
+      }
+
+      .loader.active {
+        display: block;
+      }
+
+      /* ===== Efectos adicionales ===== */
+      .fade-in {
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      .scale-in {
+        animation: scaleIn 0.5s ease-out;
+      }
+
+      .slide-in {
+        animation: slideIn 0.5s ease-out;
+      }
+
+      /* Efecto hover en sliders */
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 4px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        outline: none;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        background: #38bdf8;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      }
+
+      input[type="range"]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 16px;
+        height: 16px;
+        background: #38bdf8;
+        border-radius: 50%;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      }
+
+      input[type="range"]::-moz-range-thumb:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
       }
     </style>
   </head>
   <body>
+    <!-- Loader -->
+    <div class="loader active" id="loader"></div>
+
     <!-- Panel de control -->
     <div id="controles">
       <label>
@@ -164,11 +433,11 @@
       </div>
 
       <div id="ayudaTeclas">
-        Navegación (fly):<br>
+        <strong>⌨️ Navegación (fly):</strong><br>
         W/A/S/D: mover en plano XZ<br>
         Q/E: subir / bajar<br>
-        Ratón: mirar alrededor<br>
-        Clic en nodo: zoom + modal 2D con contenido
+        🖱️ Ratón: mirar alrededor<br>
+        🖱️ Clic en nodo: zoom + detalle
       </div>
     </div>
 
@@ -177,7 +446,7 @@
       <div id="modalCaja">
         <div id="modalHeader">
           <div id="modalTitulo">Detalle de nodo</div>
-          <button id="modalCerrar">Cerrar</button>
+          <button id="modalCerrar">✕ Cerrar</button>
         </div>
         <div id="modalContenido"></div>
       </div>
@@ -303,6 +572,47 @@
         }
       });
 
+      // ---------- Componente de animación de entrada para nodos ----------
+      AFRAME.registerComponent('nodo-animado', {
+        schema: {
+          delay: { type: 'number', default: 0 }
+        },
+        init: function () {
+          const el = this.el;
+          const delay = this.data.delay;
+          
+          // Iniciar invisible y pequeño
+          el.object3D.scale.set(0.01, 0.01, 0.01);
+          el.object3D.visible = false;
+          
+          // Animar después del delay
+          setTimeout(() => {
+            el.object3D.visible = true;
+            const startScale = 0.01;
+            const endScale = 1;
+            const duration = 800; // ms
+            const startTime = Date.now();
+            
+            const animate = () => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Easing cubic out
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const currentScale = startScale + (endScale - startScale) * eased;
+              
+              el.object3D.scale.set(currentScale, currentScale, currentScale);
+              
+              if (progress < 1) {
+                requestAnimationFrame(animate);
+              }
+            };
+            
+            animate();
+          }, delay);
+        }
+      });
+
       // ---------- Utilidades ----------
       function distancia3D(x1,y1,z1,x2,y2,z2){
         const dx = x2 - x1;
@@ -322,6 +632,7 @@
       const nodosContEl   = document.getElementById("nodos");
       const conexionesEl  = document.getElementById("conexiones");
       const rigEl         = document.getElementById("rig");
+      const loaderEl      = document.getElementById("loader");
 
       // Modal
       const modalOverlay   = document.getElementById("modalOverlay");
@@ -413,10 +724,16 @@
       sliderMaxConexiones.addEventListener("input", () => {
         maxConexionesPorNodo = parseInt(sliderMaxConexiones.value, 10);
         spanMaxConexiones.textContent = sliderMaxConexiones.value;
+        if (conexionesActivadas) {
+          actualizarConexiones(); // Actualizar inmediatamente cuando se cambia el valor
+        }
       });
 
       chkMostrarLineas.addEventListener("change", () => {
         mostrarLineas = chkMostrarLineas.checked;
+        if (conexionesActivadas) {
+          actualizarConexiones(); // Actualizar inmediatamente cuando se cambia el checkbox
+        }
       });
 
       chkMostrarCapsulas.addEventListener("change", () => {
@@ -445,12 +762,13 @@
         divPropiedades.innerHTML = "";
         clavesPropiedades = claves.slice();
 
-        clavesPropiedades.forEach(prop => {
+        clavesPropiedades.forEach((prop, index) => {
           if (!(prop in usarEnRelacion))    usarEnRelacion[prop] = true;
           if (!(prop in mostrarEnEtiqueta)) mostrarEnEtiqueta[prop] = true;
 
           const bloque = document.createElement("div");
           bloque.className = "bloque-prop";
+          bloque.style.animationDelay = (index * 0.05) + 's';
 
           const titulo = document.createElement("div");
           titulo.className = "titulo-prop";
@@ -551,6 +869,9 @@
           const nodo = document.createElement("a-entity");
           nodo.setAttribute("position", `${x} ${y} ${z}`);
           nodo.setAttribute("billboard", "target: #rig");
+          
+          // Añadir animación de entrada con delay escalonado
+          nodo.setAttribute("nodo-animado", `delay: ${i * 30}`);
 
           const capsula = crearCapsulaTransparenteHorizontal();
           nodo.appendChild(capsula);
@@ -730,7 +1051,11 @@
       }
 
       // ---------- Conexiones 3D ----------
+      let conexionesActivadas = false;
+      
       function actualizarConexiones(){
+        if (!conexionesActivadas) return; // No dibujar hasta que los nodos se hayan animado
+        
         conexionesEl.innerHTML = "";
         if (!MostrarLineasGlobal()) return;
 
@@ -901,12 +1226,28 @@
 
           crearControlesPropiedades(claves);
           crearNodos3D(items);
+          
+          // Calcular tiempo total de animación de nodos
+          // (número de nodos * 30ms delay) + 800ms de animación + 200ms de margen
+          const tiempoAnimacionTotal = (items.length * 30) + 800 + 200;
+          
+          // Ocultar loader después de cargar
+          setTimeout(() => {
+            loaderEl.classList.remove('active');
+          }, 1000);
+          
+          // Activar conexiones después de que todos los nodos se hayan animado
+          setTimeout(() => {
+            conexionesActivadas = true;
+            actualizarConexiones(); // Dibujar conexiones por primera vez
+          }, tiempoAnimacionTotal);
+          
           requestAnimationFrame(bucle);
         })
         .catch(err => {
           console.error("Error al cargar personas2.json:", err);
+          loaderEl.classList.remove('active');
         });
     </script>
   </body>
 </html>
-
