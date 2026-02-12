@@ -1,0 +1,402 @@
+[
+  {
+    "categories": {
+      "nombre": "María",
+      "hobbie": "Fotografía",
+      "edad": 28,
+      "ciudad": "Barcelona",
+      "profesion": "Diseñadora"
+    },
+    "content": "<h2>María (28)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Diseñadora<br><strong>Hobbie:</strong> Fotografía</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Carlos",
+      "hobbie": "Ciclismo",
+      "edad": 35,
+      "ciudad": "Madrid",
+      "profesion": "Ingeniero"
+    },
+    "content": "<h2>Carlos (35)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Ingeniero<br><strong>Hobbie:</strong> Ciclismo</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Ana",
+      "hobbie": "Yoga",
+      "edad": 24,
+      "ciudad": "Sevilla",
+      "profesion": "Profesora"
+    },
+    "content": "<h2>Ana (24)</h2><p><strong>Ciudad:</strong> Sevilla<br><strong>Profesión:</strong> Profesora<br><strong>Hobbie:</strong> Yoga</p>"
+  },
+  {
+    "categories": {
+      "nombre": "David",
+      "hobbie": "Gaming",
+      "edad": 22,
+      "ciudad": "Valencia",
+      "profesion": "Estudiante"
+    },
+    "content": "<h2>David (22)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> Estudiante<br><strong>Hobbie:</strong> Gaming</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Laura",
+      "hobbie": "Lectura",
+      "edad": 30,
+      "ciudad": "Bilbao",
+      "profesion": "Escritora"
+    },
+    "content": "<h2>Laura (30)</h2><p><strong>Ciudad:</strong> Bilbao<br><strong>Profesión:</strong> Escritora<br><strong>Hobbie:</strong> Lectura</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Roberto",
+      "hobbie": "Cocina",
+      "edad": 42,
+      "ciudad": "Madrid",
+      "profesion": "Chef"
+    },
+    "content": "<h2>Roberto (42)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Chef<br><strong>Hobbie:</strong> Cocina</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Elena",
+      "hobbie": "Natación",
+      "edad": 26,
+      "ciudad": "Valencia",
+      "profesion": "Médica"
+    },
+    "content": "<h2>Elena (26)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> Médica<br><strong>Hobbie:</strong> Natación</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Javier",
+      "hobbie": "Fotografía",
+      "edad": 31,
+      "ciudad": "Barcelona",
+      "profesion": "Arquitecto"
+    },
+    "content": "<h2>Javier (31)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Arquitecto<br><strong>Hobbie:</strong> Fotografía</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Sofia",
+      "hobbie": "Baile",
+      "edad": 23,
+      "ciudad": "Sevilla",
+      "profesion": "Bailarina"
+    },
+    "content": "<h2>Sofia (23)</h2><p><strong>Ciudad:</strong> Sevilla<br><strong>Profesión:</strong> Bailarina<br><strong>Hobbie:</strong> Baile</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Miguel",
+      "hobbie": "Ajedrez",
+      "edad": 29,
+      "ciudad": "Málaga",
+      "profesion": "Programador"
+    },
+    "content": "<h2>Miguel (29)</h2><p><strong>Ciudad:</strong> Málaga<br><strong>Profesión:</strong> Programador<br><strong>Hobbie:</strong> Ajedrez</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Carmen",
+      "hobbie": "Jardinería",
+      "edad": 38,
+      "ciudad": "Granada",
+      "profesion": "Bióloga"
+    },
+    "content": "<h2>Carmen (38)</h2><p><strong>Ciudad:</strong> Granada<br><strong>Profesión:</strong> Bióloga<br><strong>Hobbie:</strong> Jardinería</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Pablo",
+      "hobbie": "Escalada",
+      "edad": 27,
+      "ciudad": "Zaragoza",
+      "profesion": "Fisioterapeuta"
+    },
+    "content": "<h2>Pablo (27)</h2><p><strong>Ciudad:</strong> Zaragoza<br><strong>Profesión:</strong> Fisioterapeuta<br><strong>Hobbie:</strong> Escalada</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Isabel",
+      "hobbie": "Pintura",
+      "edad": 33,
+      "ciudad": "Barcelona",
+      "profesion": "Artista"
+    },
+    "content": "<h2>Isabel (33)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Artista<br><strong>Hobbie:</strong> Pintura</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Alejandro",
+      "hobbie": "Música",
+      "edad": 25,
+      "ciudad": "Madrid",
+      "profesion": "Músico"
+    },
+    "content": "<h2>Alejandro (25)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Músico<br><strong>Hobbie:</strong> Música</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Lucía",
+      "hobbie": "Running",
+      "edad": 28,
+      "ciudad": "Valencia",
+      "profesion": "Entrenadora"
+    },
+    "content": "<h2>Lucía (28)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> Entrenadora<br><strong>Hobbie:</strong> Running</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Fernando",
+      "hobbie": "Videojuegos",
+      "edad": 21,
+      "ciudad": "Murcia",
+      "profesion": "Estudiante"
+    },
+    "content": "<h2>Fernando (21)</h2><p><strong>Ciudad:</strong> Murcia<br><strong>Profesión:</strong> Estudiante<br><strong>Hobbie:</strong> Videojuegos</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Beatriz",
+      "hobbie": "Teatro",
+      "edad": 36,
+      "ciudad": "Bilbao",
+      "profesion": "Actriz"
+    },
+    "content": "<h2>Beatriz (36)</h2><p><strong>Ciudad:</strong> Bilbao<br><strong>Profesión:</strong> Actriz<br><strong>Hobbie:</strong> Teatro</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Alberto",
+      "hobbie": "Surf",
+      "edad": 30,
+      "ciudad": "San Sebastián",
+      "profesion": "Socorrista"
+    },
+    "content": "<h2>Alberto (30)</h2><p><strong>Ciudad:</strong> San Sebastián<br><strong>Profesión:</strong> Socorrista<br><strong>Hobbie:</strong> Surf</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Patricia",
+      "hobbie": "Cine",
+      "edad": 32,
+      "ciudad": "Sevilla",
+      "profesion": "Directora"
+    },
+    "content": "<h2>Patricia (32)</h2><p><strong>Ciudad:</strong> Sevilla<br><strong>Profesión:</strong> Directora<br><strong>Hobbie:</strong> Cine</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Raúl",
+      "hobbie": "Montañismo",
+      "edad": 40,
+      "ciudad": "Granada",
+      "profesion": "Guía"
+    },
+    "content": "<h2>Raúl (40)</h2><p><strong>Ciudad:</strong> Granada<br><strong>Profesión:</strong> Guía<br><strong>Hobbie:</strong> Montañismo</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Cristina",
+      "hobbie": "Yoga",
+      "edad": 29,
+      "ciudad": "Madrid",
+      "profesion": "Instructora"
+    },
+    "content": "<h2>Cristina (29)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Instructora<br><strong>Hobbie:</strong> Yoga</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Diego",
+      "hobbie": "Fotografía",
+      "edad": 34,
+      "ciudad": "Valencia",
+      "profesion": "Fotógrafo"
+    },
+    "content": "<h2>Diego (34)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> Fotógrafo<br><strong>Hobbie:</strong> Fotografía</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Marta",
+      "hobbie": "Repostería",
+      "edad": 27,
+      "ciudad": "Barcelona",
+      "profesion": "Pastelera"
+    },
+    "content": "<h2>Marta (27)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Pastelera<br><strong>Hobbie:</strong> Repostería</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Sergio",
+      "hobbie": "Tenis",
+      "edad": 26,
+      "ciudad": "Málaga",
+      "profesion": "Deportista"
+    },
+    "content": "<h2>Sergio (26)</h2><p><strong>Ciudad:</strong> Málaga<br><strong>Profesión:</strong> Deportista<br><strong>Hobbie:</strong> Tenis</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Natalia",
+      "hobbie": "Escritura",
+      "edad": 31,
+      "ciudad": "Bilbao",
+      "profesion": "Periodista"
+    },
+    "content": "<h2>Natalia (31)</h2><p><strong>Ciudad:</strong> Bilbao<br><strong>Profesión:</strong> Periodista<br><strong>Hobbie:</strong> Escritura</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Ángel",
+      "hobbie": "Ciclismo",
+      "edad": 39,
+      "ciudad": "Zaragoza",
+      "profesion": "Mecánico"
+    },
+    "content": "<h2>Ángel (39)</h2><p><strong>Ciudad:</strong> Zaragoza<br><strong>Profesión:</strong> Mecánico<br><strong>Hobbie:</strong> Ciclismo</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Verónica",
+      "hobbie": "Diseño",
+      "edad": 28,
+      "ciudad": "Granada",
+      "profesion": "Diseñadora"
+    },
+    "content": "<h2>Verónica (28)</h2><p><strong>Ciudad:</strong> Granada<br><strong>Profesión:</strong> Diseñadora<br><strong>Hobbie:</strong> Diseño</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Adrián",
+      "hobbie": "Gaming",
+      "edad": 23,
+      "ciudad": "Valencia",
+      "profesion": "Streamer"
+    },
+    "content": "<h2>Adrián (23)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> Streamer<br><strong>Hobbie:</strong> Gaming</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Silvia",
+      "hobbie": "Viajar",
+      "edad": 35,
+      "ciudad": "Madrid",
+      "profesion": "Azafata"
+    },
+    "content": "<h2>Silvia (35)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Azafata<br><strong>Hobbie:</strong> Viajar</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Rubén",
+      "hobbie": "Ajedrez",
+      "edad": 37,
+      "ciudad": "Barcelona",
+      "profesion": "Profesor"
+    },
+    "content": "<h2>Rubén (37)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Profesor<br><strong>Hobbie:</strong> Ajedrez</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Andrea",
+      "hobbie": "Danza",
+      "edad": 24,
+      "ciudad": "Sevilla",
+      "profesion": "Coreógrafa"
+    },
+    "content": "<h2>Andrea (24)</h2><p><strong>Ciudad:</strong> Sevilla<br><strong>Profesión:</strong> Coreógrafa<br><strong>Hobbie:</strong> Danza</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Iván",
+      "hobbie": "Pesca",
+      "edad": 44,
+      "ciudad": "Santander",
+      "profesion": "Pescador"
+    },
+    "content": "<h2>Iván (44)</h2><p><strong>Ciudad:</strong> Santander<br><strong>Profesión:</strong> Pescador<br><strong>Hobbie:</strong> Pesca</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Mónica",
+      "hobbie": "Lectura",
+      "edad": 33,
+      "ciudad": "Madrid",
+      "profesion": "Bibliotecaria"
+    },
+    "content": "<h2>Mónica (33)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Bibliotecaria<br><strong>Hobbie:</strong> Lectura</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Óscar",
+      "hobbie": "Boxeo",
+      "edad": 28,
+      "ciudad": "Málaga",
+      "profesion": "Boxeador"
+    },
+    "content": "<h2>Óscar (28)</h2><p><strong>Ciudad:</strong> Málaga<br><strong>Profesión:</strong> Boxeador<br><strong>Hobbie:</strong> Boxeo</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Rocío",
+      "hobbie": "Costura",
+      "edad": 41,
+      "ciudad": "Granada",
+      "profesion": "Modista"
+    },
+    "content": "<h2>Rocío (41)</h2><p><strong>Ciudad:</strong> Granada<br><strong>Profesión:</strong> Modista<br><strong>Hobbie:</strong> Costura</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Guillermo",
+      "hobbie": "Música",
+      "edad": 26,
+      "ciudad": "Valencia",
+      "profesion": "DJ"
+    },
+    "content": "<h2>Guillermo (26)</h2><p><strong>Ciudad:</strong> Valencia<br><strong>Profesión:</strong> DJ<br><strong>Hobbie:</strong> Música</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Alicia",
+      "hobbie": "Equitación",
+      "edad": 30,
+      "ciudad": "Barcelona",
+      "profesion": "Veterinaria"
+    },
+    "content": "<h2>Alicia (30)</h2><p><strong>Ciudad:</strong> Barcelona<br><strong>Profesión:</strong> Veterinaria<br><strong>Hobbie:</strong> Equitación</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Héctor",
+      "hobbie": "Astronomía",
+      "edad": 32,
+      "ciudad": "Madrid",
+      "profesion": "Astrofísico"
+    },
+    "content": "<h2>Héctor (32)</h2><p><strong>Ciudad:</strong> Madrid<br><strong>Profesión:</strong> Astrofísico<br><strong>Hobbie:</strong> Astronomía</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Teresa",
+      "hobbie": "Pilates",
+      "edad": 29,
+      "ciudad": "Sevilla",
+      "profesion": "Instructora"
+    },
+    "content": "<h2>Teresa (29)</h2><p><strong>Ciudad:</strong> Sevilla<br><strong>Profesión:</strong> Instructora<br><strong>Hobbie:</strong> Pilates</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Marcos",
+      "hobbie": "Buceo",
+      "edad": 34,
+      "ciudad": "Alicante",
+      "profesion": "Instructor"
+    },
+    "content": "<h2>Marcos (34)</h2><p><strong>Ciudad:</strong> Alicante<br><strong>Profesión:</strong> Instructor<br><strong>Hobbie:</strong> Buceo</p>"
+  }
+]

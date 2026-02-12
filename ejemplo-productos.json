@@ -1,0 +1,167 @@
+[
+  {
+    "categories": {
+      "nombre": "iPhone 15 Pro",
+      "categoria": "Smartphone",
+      "precio": 1199,
+      "marca": "Apple",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>iPhone 15 Pro</h2><p><strong>Marca:</strong> Apple<br><strong>Categoría:</strong> Smartphone<br><strong>Precio:</strong> €1199<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "MacBook Pro M3",
+      "categoria": "Laptop",
+      "precio": 2499,
+      "marca": "Apple",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>MacBook Pro M3</h2><p><strong>Marca:</strong> Apple<br><strong>Categoría:</strong> Laptop<br><strong>Precio:</strong> €2499<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Samsung Galaxy S24",
+      "categoria": "Smartphone",
+      "precio": 899,
+      "marca": "Samsung",
+      "origen": "Corea del Sur",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Samsung Galaxy S24</h2><p><strong>Marca:</strong> Samsung<br><strong>Categoría:</strong> Smartphone<br><strong>Precio:</strong> €899<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Sony WH-1000XM5",
+      "categoria": "Auriculares",
+      "precio": 399,
+      "marca": "Sony",
+      "origen": "Japón",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Sony WH-1000XM5</h2><p><strong>Marca:</strong> Sony<br><strong>Categoría:</strong> Auriculares<br><strong>Precio:</strong> €399<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Dell XPS 15",
+      "categoria": "Laptop",
+      "precio": 1799,
+      "marca": "Dell",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Dell XPS 15</h2><p><strong>Marca:</strong> Dell<br><strong>Categoría:</strong> Laptop<br><strong>Precio:</strong> €1799<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Logitech MX Master 3S",
+      "categoria": "Mouse",
+      "precio": 109,
+      "marca": "Logitech",
+      "origen": "Suiza",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Logitech MX Master 3S</h2><p><strong>Marca:</strong> Logitech<br><strong>Categoría:</strong> Mouse<br><strong>Precio:</strong> €109<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "iPad Pro 12.9",
+      "categoria": "Tablet",
+      "precio": 1299,
+      "marca": "Apple",
+      "origen": "Estados Unidos",
+      "stock": "Agotado"
+    },
+    "content": "<h2>iPad Pro 12.9</h2><p><strong>Marca:</strong> Apple<br><strong>Categoría:</strong> Tablet<br><strong>Precio:</strong> €1299<br><strong>Stock:</strong> Agotado</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Bose QuietComfort 45",
+      "categoria": "Auriculares",
+      "precio": 349,
+      "marca": "Bose",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Bose QuietComfort 45</h2><p><strong>Marca:</strong> Bose<br><strong>Categoría:</strong> Auriculares<br><strong>Precio:</strong> €349<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Lenovo ThinkPad X1",
+      "categoria": "Laptop",
+      "precio": 1699,
+      "marca": "Lenovo",
+      "origen": "China",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Lenovo ThinkPad X1</h2><p><strong>Marca:</strong> Lenovo<br><strong>Categoría:</strong> Laptop<br><strong>Precio:</strong> €1699<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Google Pixel 8 Pro",
+      "categoria": "Smartphone",
+      "precio": 999,
+      "marca": "Google",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Google Pixel 8 Pro</h2><p><strong>Marca:</strong> Google<br><strong>Categoría:</strong> Smartphone<br><strong>Precio:</strong> €999<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Samsung Galaxy Tab S9",
+      "categoria": "Tablet",
+      "precio": 799,
+      "marca": "Samsung",
+      "origen": "Corea del Sur",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Samsung Galaxy Tab S9</h2><p><strong>Marca:</strong> Samsung<br><strong>Categoría:</strong> Tablet<br><strong>Precio:</strong> €799<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Razer DeathAdder V3",
+      "categoria": "Mouse",
+      "precio": 89,
+      "marca": "Razer",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Razer DeathAdder V3</h2><p><strong>Marca:</strong> Razer<br><strong>Categoría:</strong> Mouse<br><strong>Precio:</strong> €89<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "JBL Flip 6",
+      "categoria": "Altavoz",
+      "precio": 129,
+      "marca": "JBL",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>JBL Flip 6</h2><p><strong>Marca:</strong> JBL<br><strong>Categoría:</strong> Altavoz<br><strong>Precio:</strong> €129<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Microsoft Surface Pro 9",
+      "categoria": "Tablet",
+      "precio": 1199,
+      "marca": "Microsoft",
+      "origen": "Estados Unidos",
+      "stock": "Disponible"
+    },
+    "content": "<h2>Microsoft Surface Pro 9</h2><p><strong>Marca:</strong> Microsoft<br><strong>Categoría:</strong> Tablet<br><strong>Precio:</strong> €1199<br><strong>Stock:</strong> Disponible</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Sony A7 IV",
+      "categoria": "Cámara",
+      "precio": 2499,
+      "marca": "Sony",
+      "origen": "Japón",
+      "stock": "Agotado"
+    },
+    "content": "<h2>Sony A7 IV</h2><p><strong>Marca:</strong> Sony<br><strong>Categoría:</strong> Cámara<br><strong>Precio:</strong> €2499<br><strong>Stock:</strong> Agotado</p>"
+  }
+]

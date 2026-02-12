@@ -1,0 +1,167 @@
+[
+  {
+    "categories": {
+      "titulo": "Cien Años de Soledad",
+      "idioma": "Español",
+      "año": 1967,
+      "autor": "Gabriel García Márquez",
+      "genero": "Realismo Mágico",
+      "editorial": "Sudamericana"
+    },
+    "content": "<h2>Cien Años de Soledad</h2><p><strong>Autor:</strong> Gabriel García Márquez<br><strong>Año:</strong> 1967<br><strong>Género:</strong> Realismo Mágico<br><strong>Idioma:</strong> Español</p>"
+  },
+  {
+    "categories": {
+      "titulo": "1984",
+      "idioma": "Inglés",
+      "año": 1949,
+      "autor": "George Orwell",
+      "genero": "Distopía",
+      "editorial": "Secker & Warburg"
+    },
+    "content": "<h2>1984</h2><p><strong>Autor:</strong> George Orwell<br><strong>Año:</strong> 1949<br><strong>Género:</strong> Distopía<br><strong>Idioma:</strong> Inglés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Principito",
+      "idioma": "Francés",
+      "año": 1943,
+      "autor": "Antoine de Saint-Exupéry",
+      "genero": "Fábula",
+      "editorial": "Reynal & Hitchcock"
+    },
+    "content": "<h2>El Principito</h2><p><strong>Autor:</strong> Antoine de Saint-Exupéry<br><strong>Año:</strong> 1943<br><strong>Género:</strong> Fábula<br><strong>Idioma:</strong> Francés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Don Quijote de la Mancha",
+      "idioma": "Español",
+      "año": 1605,
+      "autor": "Miguel de Cervantes",
+      "genero": "Novela",
+      "editorial": "Francisco de Robles"
+    },
+    "content": "<h2>Don Quijote de la Mancha</h2><p><strong>Autor:</strong> Miguel de Cervantes<br><strong>Año:</strong> 1605<br><strong>Género:</strong> Novela<br><strong>Idioma:</strong> Español</p>"
+  },
+  {
+    "categories": {
+      "titulo": "La Sombra del Viento",
+      "idioma": "Español",
+      "año": 2001,
+      "autor": "Carlos Ruiz Zafón",
+      "genero": "Misterio",
+      "editorial": "Planeta"
+    },
+    "content": "<h2>La Sombra del Viento</h2><p><strong>Autor:</strong> Carlos Ruiz Zafón<br><strong>Año:</strong> 2001<br><strong>Género:</strong> Misterio<br><strong>Idioma:</strong> Español</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Harry Potter y la Piedra Filosofal",
+      "idioma": "Inglés",
+      "año": 1997,
+      "autor": "J.K. Rowling",
+      "genero": "Fantasía",
+      "editorial": "Bloomsbury"
+    },
+    "content": "<h2>Harry Potter y la Piedra Filosofal</h2><p><strong>Autor:</strong> J.K. Rowling<br><strong>Año:</strong> 1997<br><strong>Género:</strong> Fantasía<br><strong>Idioma:</strong> Inglés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Rayuela",
+      "idioma": "Español",
+      "año": 1963,
+      "autor": "Julio Cortázar",
+      "genero": "Experimental",
+      "editorial": "Sudamericana"
+    },
+    "content": "<h2>Rayuela</h2><p><strong>Autor:</strong> Julio Cortázar<br><strong>Año:</strong> 1963<br><strong>Género:</strong> Experimental<br><strong>Idioma:</strong> Español</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Señor de los Anillos",
+      "idioma": "Inglés",
+      "año": 1954,
+      "autor": "J.R.R. Tolkien",
+      "genero": "Fantasía",
+      "editorial": "Allen & Unwin"
+    },
+    "content": "<h2>El Señor de los Anillos</h2><p><strong>Autor:</strong> J.R.R. Tolkien<br><strong>Año:</strong> 1954<br><strong>Género:</strong> Fantasía<br><strong>Idioma:</strong> Inglés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Crimen y Castigo",
+      "idioma": "Ruso",
+      "año": 1866,
+      "autor": "Fiódor Dostoyevski",
+      "genero": "Novela Psicológica",
+      "editorial": "The Russian Messenger"
+    },
+    "content": "<h2>Crimen y Castigo</h2><p><strong>Autor:</strong> Fiódor Dostoyevski<br><strong>Año:</strong> 1866<br><strong>Género:</strong> Novela Psicológica<br><strong>Idioma:</strong> Ruso</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Los Miserables",
+      "idioma": "Francés",
+      "año": 1862,
+      "autor": "Victor Hugo",
+      "genero": "Drama",
+      "editorial": "A. Lacroix"
+    },
+    "content": "<h2>Los Miserables</h2><p><strong>Autor:</strong> Victor Hugo<br><strong>Año:</strong> 1862<br><strong>Género:</strong> Drama<br><strong>Idioma:</strong> Francés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "La Casa de los Espíritus",
+      "idioma": "Español",
+      "año": 1982,
+      "autor": "Isabel Allende",
+      "genero": "Realismo Mágico",
+      "editorial": "Plaza & Janés"
+    },
+    "content": "<h2>La Casa de los Espíritus</h2><p><strong>Autor:</strong> Isabel Allende<br><strong>Año:</strong> 1982<br><strong>Género:</strong> Realismo Mágico<br><strong>Idioma:</strong> Español</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Alquimista",
+      "idioma": "Portugués",
+      "año": 1988,
+      "autor": "Paulo Coelho",
+      "genero": "Fábula",
+      "editorial": "Rocco"
+    },
+    "content": "<h2>El Alquimista</h2><p><strong>Autor:</strong> Paulo Coelho<br><strong>Año:</strong> 1988<br><strong>Género:</strong> Fábula<br><strong>Idioma:</strong> Portugués</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Brave New World",
+      "idioma": "Inglés",
+      "año": 1932,
+      "autor": "Aldous Huxley",
+      "genero": "Distopía",
+      "editorial": "Chatto & Windus"
+    },
+    "content": "<h2>Brave New World</h2><p><strong>Autor:</strong> Aldous Huxley<br><strong>Año:</strong> 1932<br><strong>Género:</strong> Distopía<br><strong>Idioma:</strong> Inglés</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Nombre de la Rosa",
+      "idioma": "Italiano",
+      "año": 1980,
+      "autor": "Umberto Eco",
+      "genero": "Misterio",
+      "editorial": "Bompiani"
+    },
+    "content": "<h2>El Nombre de la Rosa</h2><p><strong>Autor:</strong> Umberto Eco<br><strong>Año:</strong> 1980<br><strong>Género:</strong> Misterio<br><strong>Idioma:</strong> Italiano</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Ficciones",
+      "idioma": "Español",
+      "año": 1944,
+      "autor": "Jorge Luis Borges",
+      "genero": "Cuentos",
+      "editorial": "Sur"
+    },
+    "content": "<h2>Ficciones</h2><p><strong>Autor:</strong> Jorge Luis Borges<br><strong>Año:</strong> 1944<br><strong>Género:</strong> Cuentos<br><strong>Idioma:</strong> Español</p>"
+  }
+]

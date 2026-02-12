@@ -1,0 +1,222 @@
+[
+  {
+    "categories": {
+      "titulo": "El Padrino",
+      "genero": "Drama",
+      "año": 1972,
+      "director": "Francis Ford Coppola",
+      "pais": "Estados Unidos",
+      "duracion": "175 min"
+    },
+    "content": "<h2>El Padrino (1972)</h2><p><strong>Director:</strong> Francis Ford Coppola<br><strong>Género:</strong> Drama<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 175 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Pulp Fiction",
+      "genero": "Crime",
+      "año": 1994,
+      "director": "Quentin Tarantino",
+      "pais": "Estados Unidos",
+      "duracion": "154 min"
+    },
+    "content": "<h2>Pulp Fiction (1994)</h2><p><strong>Director:</strong> Quentin Tarantino<br><strong>Género:</strong> Crime<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 154 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Laberinto del Fauno",
+      "genero": "Fantasía",
+      "año": 2006,
+      "director": "Guillermo del Toro",
+      "pais": "España",
+      "duracion": "118 min"
+    },
+    "content": "<h2>El Laberinto del Fauno (2006)</h2><p><strong>Director:</strong> Guillermo del Toro<br><strong>Género:</strong> Fantasía<br><strong>País:</strong> España<br><strong>Duración:</strong> 118 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Inception",
+      "genero": "Ciencia Ficción",
+      "año": 2010,
+      "director": "Christopher Nolan",
+      "pais": "Estados Unidos",
+      "duracion": "148 min"
+    },
+    "content": "<h2>Inception (2010)</h2><p><strong>Director:</strong> Christopher Nolan<br><strong>Género:</strong> Ciencia Ficción<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 148 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Amélie",
+      "genero": "Romance",
+      "año": 2001,
+      "director": "Jean-Pierre Jeunet",
+      "pais": "Francia",
+      "duracion": "122 min"
+    },
+    "content": "<h2>Amélie (2001)</h2><p><strong>Director:</strong> Jean-Pierre Jeunet<br><strong>Género:</strong> Romance<br><strong>País:</strong> Francia<br><strong>Duración:</strong> 122 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Interstellar",
+      "genero": "Ciencia Ficción",
+      "año": 2014,
+      "director": "Christopher Nolan",
+      "pais": "Estados Unidos",
+      "duracion": "169 min"
+    },
+    "content": "<h2>Interstellar (2014)</h2><p><strong>Director:</strong> Christopher Nolan<br><strong>Género:</strong> Ciencia Ficción<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 169 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Todo sobre mi madre",
+      "genero": "Drama",
+      "año": 1999,
+      "director": "Pedro Almodóvar",
+      "pais": "España",
+      "duracion": "101 min"
+    },
+    "content": "<h2>Todo sobre mi madre (1999)</h2><p><strong>Director:</strong> Pedro Almodóvar<br><strong>Género:</strong> Drama<br><strong>País:</strong> España<br><strong>Duración:</strong> 101 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Kill Bill Vol. 1",
+      "genero": "Acción",
+      "año": 2003,
+      "director": "Quentin Tarantino",
+      "pais": "Estados Unidos",
+      "duracion": "111 min"
+    },
+    "content": "<h2>Kill Bill Vol. 1 (2003)</h2><p><strong>Director:</strong> Quentin Tarantino<br><strong>Género:</strong> Acción<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 111 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Secreto de sus Ojos",
+      "genero": "Thriller",
+      "año": 2009,
+      "director": "Juan José Campanella",
+      "pais": "Argentina",
+      "duracion": "129 min"
+    },
+    "content": "<h2>El Secreto de sus Ojos (2009)</h2><p><strong>Director:</strong> Juan José Campanella<br><strong>Género:</strong> Thriller<br><strong>País:</strong> Argentina<br><strong>Duración:</strong> 129 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Volver",
+      "genero": "Drama",
+      "año": 2006,
+      "director": "Pedro Almodóvar",
+      "pais": "España",
+      "duracion": "121 min"
+    },
+    "content": "<h2>Volver (2006)</h2><p><strong>Director:</strong> Pedro Almodóvar<br><strong>Género:</strong> Drama<br><strong>País:</strong> España<br><strong>Duración:</strong> 121 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "The Shawshank Redemption",
+      "genero": "Drama",
+      "año": 1994,
+      "director": "Frank Darabont",
+      "pais": "Estados Unidos",
+      "duracion": "142 min"
+    },
+    "content": "<h2>The Shawshank Redemption (1994)</h2><p><strong>Director:</strong> Frank Darabont<br><strong>Género:</strong> Drama<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 142 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Cinema Paradiso",
+      "genero": "Romance",
+      "año": 1988,
+      "director": "Giuseppe Tornatore",
+      "pais": "Italia",
+      "duracion": "155 min"
+    },
+    "content": "<h2>Cinema Paradiso (1988)</h2><p><strong>Director:</strong> Giuseppe Tornatore<br><strong>Género:</strong> Romance<br><strong>País:</strong> Italia<br><strong>Duración:</strong> 155 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Hijo de la Novia",
+      "genero": "Comedia",
+      "año": 2001,
+      "director": "Juan José Campanella",
+      "pais": "Argentina",
+      "duracion": "123 min"
+    },
+    "content": "<h2>El Hijo de la Novia (2001)</h2><p><strong>Director:</strong> Juan José Campanella<br><strong>Género:</strong> Comedia<br><strong>País:</strong> Argentina<br><strong>Duración:</strong> 123 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "La Vida es Bella",
+      "genero": "Drama",
+      "año": 1997,
+      "director": "Roberto Benigni",
+      "pais": "Italia",
+      "duracion": "116 min"
+    },
+    "content": "<h2>La Vida es Bella (1997)</h2><p><strong>Director:</strong> Roberto Benigni<br><strong>Género:</strong> Drama<br><strong>País:</strong> Italia<br><strong>Duración:</strong> 116 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "The Dark Knight",
+      "genero": "Acción",
+      "año": 2008,
+      "director": "Christopher Nolan",
+      "pais": "Estados Unidos",
+      "duracion": "152 min"
+    },
+    "content": "<h2>The Dark Knight (2008)</h2><p><strong>Director:</strong> Christopher Nolan<br><strong>Género:</strong> Acción<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 152 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Hable con Ella",
+      "genero": "Drama",
+      "año": 2002,
+      "director": "Pedro Almodóvar",
+      "pais": "España",
+      "duracion": "112 min"
+    },
+    "content": "<h2>Hable con Ella (2002)</h2><p><strong>Director:</strong> Pedro Almodóvar<br><strong>Género:</strong> Drama<br><strong>País:</strong> España<br><strong>Duración:</strong> 112 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Coco",
+      "genero": "Animación",
+      "año": 2017,
+      "director": "Lee Unkrich",
+      "pais": "Estados Unidos",
+      "duracion": "105 min"
+    },
+    "content": "<h2>Coco (2017)</h2><p><strong>Director:</strong> Lee Unkrich<br><strong>Género:</strong> Animación<br><strong>País:</strong> Estados Unidos<br><strong>Duración:</strong> 105 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Oldboy",
+      "genero": "Thriller",
+      "año": 2003,
+      "director": "Park Chan-wook",
+      "pais": "Corea del Sur",
+      "duracion": "120 min"
+    },
+    "content": "<h2>Oldboy (2003)</h2><p><strong>Director:</strong> Park Chan-wook<br><strong>Género:</strong> Thriller<br><strong>País:</strong> Corea del Sur<br><strong>Duración:</strong> 120 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "El Orfanato",
+      "genero": "Terror",
+      "año": 2007,
+      "director": "Juan Antonio Bayona",
+      "pais": "España",
+      "duracion": "105 min"
+    },
+    "content": "<h2>El Orfanato (2007)</h2><p><strong>Director:</strong> Juan Antonio Bayona<br><strong>Género:</strong> Terror<br><strong>País:</strong> España<br><strong>Duración:</strong> 105 min</p>"
+  },
+  {
+    "categories": {
+      "titulo": "Spirited Away",
+      "genero": "Animación",
+      "año": 2001,
+      "director": "Hayao Miyazaki",
+      "pais": "Japón",
+      "duracion": "125 min"
+    },
+    "content": "<h2>Spirited Away (2001)</h2><p><strong>Director:</strong> Hayao Miyazaki<br><strong>Género:</strong> Animación<br><strong>País:</strong> Japón<br><strong>Duración:</strong> 125 min</p>"
+  }
+]

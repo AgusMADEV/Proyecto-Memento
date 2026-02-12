@@ -382,11 +382,158 @@
         transform: scale(1.2);
         box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
       }
+
+      /* ===== BOTONES DE ACCIÓN ===== */
+      .btn-action {
+        display: block;
+        width: 100%;
+        padding: 8px 12px;
+        margin: 6px 0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(59, 130, 246, 0.2));
+        color: #f1f5f9;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        backdrop-filter: blur(8px);
+      }
+
+      .btn-action:hover {
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(59, 130, 246, 0.4));
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+      }
+
+      .btn-action:active {
+        transform: translateY(0);
+      }
+
+      .btn-export {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.2));
+      }
+
+      .btn-export:hover {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(22, 163, 74, 0.4));
+        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+      }
+
+      .btn-import {
+        background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(147, 51, 234, 0.2));
+      }
+
+      .btn-import:hover {
+        background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(147, 51, 234, 0.4));
+        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+      }
+
+      .seccion-titulo {
+        font-weight: bold;
+        color: #fbbf24;
+        margin-top: 12px;
+        margin-bottom: 6px;
+        padding-top: 8px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+      }
+
+      /* ===== NOTIFICACIONES TOAST ===== */
+      .toast-container {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        pointer-events: none;
+      }
+
+      .toast {
+        min-width: 280px;
+        max-width: 400px;
+        padding: 14px 18px;
+        border-radius: 12px;
+        background: rgba(30, 41, 59, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        color: #f1f5f9;
+        font-size: 13px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        pointer-events: auto;
+        animation: toastSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .toast.closing {
+        animation: toastSlideOut 0.3s ease-out forwards;
+      }
+
+      .toast-icon {
+        font-size: 20px;
+        line-height: 1;
+        flex-shrink: 0;
+      }
+
+      .toast-message {
+        flex: 1;
+        line-height: 1.4;
+      }
+
+      .toast-success {
+        border-left: 4px solid #22c55e;
+      }
+
+      .toast-error {
+        border-left: 4px solid #ef4444;
+      }
+
+      .toast-info {
+        border-left: 4px solid #3b82f6;
+      }
+
+      .toast-warning {
+        border-left: 4px solid #f59e0b;
+      }
+
+      @keyframes toastSlideIn {
+        from {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes toastSlideOut {
+        from {
+          transform: translateX(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateX(400px);
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body>
     <!-- Loader -->
     <div class="loader active" id="loader"></div>
+
+    <!-- Contenedor de Notificaciones Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Input file oculto para importar -->
+    <input type="file" id="fileInput" accept=".json" style="display: none;">
 
     <!-- Panel de control -->
     <div id="controles">
@@ -439,6 +586,11 @@
         🖱️ Ratón: mirar alrededor<br>
         🖱️ Clic en nodo: zoom + detalle
       </div>
+
+      <div class="seccion-titulo">📦 Gestión de Datos</div>
+      <button class="btn-action btn-export" id="btnExportJSON">📥 Exportar JSON</button>
+      <button class="btn-action btn-export" id="btnExportCSV">📊 Exportar CSV</button>
+      <button class="btn-action btn-import" id="btnImportJSON">📤 Importar JSON</button>
     </div>
 
     <!-- Modal 2D -->
@@ -480,6 +632,251 @@
 
     <script>
       const THREE = AFRAME.THREE;
+
+      // ===== SISTEMA DE NOTIFICACIONES TOAST =====
+      const toastContainer = document.getElementById('toastContainer');
+
+      function mostrarToast(mensaje, tipo = 'info', duracion = 3000) {
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${tipo}`;
+        
+        const iconos = {
+          success: '✅',
+          error: '❌',
+          info: 'ℹ️',
+          warning: '⚠️'
+        };
+        
+        toast.innerHTML = `
+          <span class="toast-icon">${iconos[tipo] || 'ℹ️'}</span>
+          <span class="toast-message">${mensaje}</span>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Auto-eliminar después de la duración
+        setTimeout(() => {
+          toast.classList.add('closing');
+          setTimeout(() => {
+            if (toast.parentElement) {
+              toast.parentElement.removeChild(toast);
+            }
+          }, 300);
+        }, duracion);
+        
+        // Click para cerrar manualmente
+        toast.addEventListener('click', () => {
+          toast.classList.add('closing');
+          setTimeout(() => {
+            if (toast.parentElement) {
+              toast.parentElement.removeChild(toast);
+            }
+          }, 300);
+        });
+      }
+
+      // ===== FUNCIONES DE EXPORTACIÓN =====
+      function descargarArchivo(contenido, nombreArchivo, tipoMIME) {
+        const blob = new Blob([contenido], { type: tipoMIME });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = nombreArchivo;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }
+
+      function exportarJSON() {
+        try {
+          if (!datosOriginales || datosOriginales.length === 0) {
+            mostrarToast('No hay datos para exportar', 'warning');
+            return;
+          }
+          
+          const jsonString = JSON.stringify(datosOriginales, null, 2);
+          const fecha = new Date().toISOString().split('T')[0];
+          const nombreArchivo = `memento-export-${fecha}.json`;
+          
+          descargarArchivo(jsonString, nombreArchivo, 'application/json');
+          mostrarToast(`✨ Exportados ${datosOriginales.length} registros a JSON`, 'success');
+        } catch (error) {
+          console.error('Error al exportar JSON:', error);
+          mostrarToast('Error al exportar JSON: ' + error.message, 'error');
+        }
+      }
+
+      function exportarCSV() {
+        try {
+          if (!datosOriginales || datosOriginales.length === 0) {
+            mostrarToast('No hay datos para exportar', 'warning');
+            return;
+          }
+          
+          // Obtener todas las propiedades únicas
+          const propiedades = new Set();
+          datosOriginales.forEach(item => {
+            if (item.categories) {
+              Object.keys(item.categories).forEach(key => propiedades.add(key));
+            }
+          });
+          
+          const columnas = Array.from(propiedades).sort();
+          
+          // Crear encabezados CSV
+          let csv = columnas.map(col => `"${col}"`).join(',') + '\n';
+          
+          // Agregar cada fila de datos
+          datosOriginales.forEach(item => {
+            const fila = columnas.map(col => {
+              const valor = item.categories && item.categories[col] ? item.categories[col] : '';
+              // Escapar comillas dobles y envolver en comillas
+              return `"${String(valor).replace(/"/g, '""')}"`;
+            });
+            csv += fila.join(',') + '\n';
+          });
+          
+          const fecha = new Date().toISOString().split('T')[0];
+          const nombreArchivo = `memento-export-${fecha}.csv`;
+          
+          // UTF-8 BOM para compatibilidad con Excel
+          const bom = '\uFEFF';
+          descargarArchivo(bom + csv, nombreArchivo, 'text/csv;charset=utf-8;');
+          mostrarToast(`📊 Exportados ${datosOriginales.length} registros a CSV`, 'success');
+        } catch (error) {
+          console.error('Error al exportar CSV:', error);
+          mostrarToast('Error al exportar CSV: ' + error.message, 'error');
+        }
+      }
+
+      // ===== FUNCIONES DE IMPORTACIÓN =====
+      function validarDatosJSON(datos) {
+        if (!Array.isArray(datos)) {
+          throw new Error('El archivo debe contener un array de objetos');
+        }
+        
+        if (datos.length === 0) {
+          throw new Error('El archivo está vacío');
+        }
+        
+        // Validar estructura de cada elemento
+        let validos = 0;
+        datos.forEach((item, index) => {
+          if (typeof item !== 'object' || item === null) {
+            throw new Error(`Elemento ${index + 1} no es un objeto válido`);
+          }
+          
+          // Verificar que tenga al menos categories
+          if (!item.categories || typeof item.categories !== 'object') {
+            console.warn(`Elemento ${index + 1} no tiene categories válido, se ignorará`);
+          } else {
+            validos++;
+          }
+        });
+        
+        if (validos === 0) {
+          throw new Error('Ningún elemento tiene una estructura válida (necesita "categories")');
+        }
+        
+        return validos;
+      }
+
+      function importarJSON() {
+        const fileInput = document.getElementById('fileInput');
+        
+        fileInput.onchange = (e) => {
+          const file = e.target.files[0];
+          if (!file) return;
+          
+          mostrarToast('⏳ Cargando archivo...', 'info', 2000);
+          
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            try {
+              const contenido = event.target.result;
+              const datos = JSON.parse(contenido);
+              
+              // Validar datos
+              const validos = validarDatosJSON(datos);
+              
+              // Filtrar solo elementos válidos
+              const datosValidos = datos.filter(item => 
+                item.categories && typeof item.categories === 'object'
+              );
+              
+              // Recargar la escena con los nuevos datos
+              recargarEscenaConDatos(datosValidos);
+              
+              mostrarToast(
+                `✅ Importados ${validos} registros correctamente`, 
+                'success', 
+                4000
+              );
+              
+            } catch (error) {
+              console.error('Error al importar:', error);
+              mostrarToast(
+                `❌ Error al importar: ${error.message}`, 
+                'error', 
+                5000
+              );
+            }
+          };
+          
+          reader.onerror = () => {
+            mostrarToast('Error al leer el archivo', 'error');
+          };
+          
+          reader.readAsText(file);
+          
+          // Limpiar input para permitir seleccionar el mismo archivo de nuevo
+          fileInput.value = '';
+        };
+        
+        fileInput.click();
+      }
+
+      function recargarEscenaConDatos(nuevosItems) {
+        // Limpiar escena actual
+        while (nodosContEl.firstChild) {
+          nodosContEl.removeChild(nodosContEl.firstChild);
+        }
+        while (conexionesEl.firstChild) {
+          conexionesEl.removeChild(conexionesEl.firstChild);
+        }
+        
+        // Reiniciar estado
+        particulas = [];
+        conexionesActivadas = false;
+        etiquetasSucias = false;
+        contadorFrames = 0;
+        ultimoTiempo = null;
+        
+        // Actualizar datos originales
+        datosOriginales = nuevosItems;
+        
+        // Detectar claves de propiedades
+        const setClaves = new Set();
+        nuevosItems.forEach(item => {
+          const cats = item.categories || {};
+          Object.keys(cats).forEach(k => setClaves.add(k));
+        });
+        const claves = Array.from(setClaves);
+        
+        // Recrear controles y nodos
+        crearControlesPropiedades(claves);
+        crearNodos3D(nuevosItems);
+        
+        // Reactivar animaciones y conexiones
+        const tiempoAnimacionTotal = (nuevosItems.length * 30) + 800 + 200;
+        setTimeout(() => {
+          conexionesActivadas = true;
+          actualizarConexiones();
+        }, tiempoAnimacionTotal);
+        
+        mostrarToast('🔄 Escena recargada con nuevos datos', 'info', 3000);
+      }
 
       // ---------- Shader gradiente para el cielo ----------
       AFRAME.registerShader('gradiente', {
@@ -686,6 +1083,9 @@
       let opacidadCapsulas  = 0.25;
 
       let maxConexionesPorNodo = 2;
+      
+      // Variable global para almacenar datos originales
+      let datosOriginales = [];
 
       const sliderMin = document.getElementById("grosorMin");
       const sliderMax = document.getElementById("grosorMax");
@@ -1213,10 +1613,17 @@
         requestAnimationFrame(bucle);
       }
 
+      // ---------- Event Listeners para Import/Export ----------
+      document.getElementById('btnExportJSON').addEventListener('click', exportarJSON);
+      document.getElementById('btnExportCSV').addEventListener('click', exportarCSV);
+      document.getElementById('btnImportJSON').addEventListener('click', importarJSON);
+
       // ---------- Carga de datos ----------
       fetch("personas2.json")
         .then(r => r.json())
         .then(items => {
+          // Guardar datos originales
+          datosOriginales = items;
           const setClaves = new Set();
           items.forEach(item => {
             const cats = item.categories || {};

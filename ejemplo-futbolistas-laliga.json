@@ -1,0 +1,602 @@
+[
+  {
+    "categories": {
+      "nombre": "Robert Lewandowski",
+      "posicion": "Delantero",
+      "equipo": "FC Barcelona",
+      "goles": 23,
+      "asistencias": 8,
+      "edad": 35,
+      "nacionalidad": "Polonia",
+      "dorsal": 9,
+      "pierna": "Derecha",
+      "valoracion": 91
+    },
+    "content": "<h2>Robert Lewandowski #9</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 35 años<br><strong>Nacionalidad:</strong> Polonia<br><strong>Stats:</strong> 23 goles, 8 asistencias<br><strong>Valoración:</strong> 91</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Jude Bellingham",
+      "posicion": "Centrocampista",
+      "equipo": "Real Madrid",
+      "goles": 19,
+      "asistencias": 12,
+      "edad": 20,
+      "nacionalidad": "Inglaterra",
+      "dorsal": 5,
+      "pierna": "Derecha",
+      "valoracion": 90
+    },
+    "content": "<h2>Jude Bellingham #5</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 20 años<br><strong>Nacionalidad:</strong> Inglaterra<br><strong>Stats:</strong> 19 goles, 12 asistencias<br><strong>Valoración:</strong> 90</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Marc-André ter Stegen",
+      "posicion": "Portero",
+      "equipo": "FC Barcelona",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 31,
+      "nacionalidad": "Alemania",
+      "dorsal": 1,
+      "pierna": "Derecha",
+      "valoracion": 89
+    },
+    "content": "<h2>Marc-André ter Stegen #1</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> Alemania<br><strong>Valoración:</strong> 89</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Vinícius Jr",
+      "posicion": "Delantero",
+      "equipo": "Real Madrid",
+      "goles": 18,
+      "asistencias": 10,
+      "edad": 23,
+      "nacionalidad": "Brasil",
+      "dorsal": 7,
+      "pierna": "Derecha",
+      "valoracion": 89
+    },
+    "content": "<h2>Vinícius Jr #7</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 23 años<br><strong>Nacionalidad:</strong> Brasil<br><strong>Stats:</strong> 18 goles, 10 asistencias<br><strong>Valoración:</strong> 89</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Jan Oblak",
+      "posicion": "Portero",
+      "equipo": "Atlético Madrid",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 31,
+      "nacionalidad": "Eslovenia",
+      "dorsal": 13,
+      "pierna": "Derecha",
+      "valoracion": 89
+    },
+    "content": "<h2>Jan Oblak #13</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> Eslovenia<br><strong>Valoración:</strong> 89</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Antoine Griezmann",
+      "posicion": "Delantero",
+      "equipo": "Atlético Madrid",
+      "goles": 16,
+      "asistencias": 14,
+      "edad": 32,
+      "nacionalidad": "Francia",
+      "dorsal": 8,
+      "pierna": "Izquierda",
+      "valoracion": 87
+    },
+    "content": "<h2>Antoine Griezmann #8</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 32 años<br><strong>Nacionalidad:</strong> Francia<br><strong>Stats:</strong> 16 goles, 14 asistencias<br><strong>Valoración:</strong> 87</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Pedri",
+      "posicion": "Centrocampista",
+      "equipo": "FC Barcelona",
+      "goles": 4,
+      "asistencias": 6,
+      "edad": 21,
+      "nacionalidad": "España",
+      "dorsal": 8,
+      "pierna": "Derecha",
+      "valoracion": 85
+    },
+    "content": "<h2>Pedri #8</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 21 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 4 goles, 6 asistencias<br><strong>Valoración:</strong> 85</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Federico Valverde",
+      "posicion": "Centrocampista",
+      "equipo": "Real Madrid",
+      "goles": 8,
+      "asistencias": 7,
+      "edad": 25,
+      "nacionalidad": "Uruguay",
+      "dorsal": 15,
+      "pierna": "Derecha",
+      "valoracion": 87
+    },
+    "content": "<h2>Federico Valverde #15</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 25 años<br><strong>Nacionalidad:</strong> Uruguay<br><strong>Stats:</strong> 8 goles, 7 asistencias<br><strong>Valoración:</strong> 87</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Gavi",
+      "posicion": "Centrocampista",
+      "equipo": "FC Barcelona",
+      "goles": 3,
+      "asistencias": 5,
+      "edad": 19,
+      "nacionalidad": "España",
+      "dorsal": 6,
+      "pierna": "Derecha",
+      "valoracion": 83
+    },
+    "content": "<h2>Gavi #6</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 19 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 3 goles, 5 asistencias<br><strong>Valoración:</strong> 83</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Thibaut Courtois",
+      "posicion": "Portero",
+      "equipo": "Real Madrid",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 31,
+      "nacionalidad": "Bélgica",
+      "dorsal": 1,
+      "pierna": "Izquierda",
+      "valoracion": 90
+    },
+    "content": "<h2>Thibaut Courtois #1</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> Bélgica<br><strong>Valoración:</strong> 90</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Ronald Araújo",
+      "posicion": "Defensa",
+      "equipo": "FC Barcelona",
+      "goles": 2,
+      "asistencias": 1,
+      "edad": 24,
+      "nacionalidad": "Uruguay",
+      "dorsal": 4,
+      "pierna": "Derecha",
+      "valoracion": 85
+    },
+    "content": "<h2>Ronald Araújo #4</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Defensa<br><strong>Edad:</strong> 24 años<br><strong>Nacionalidad:</strong> Uruguay<br><strong>Stats:</strong> 2 goles, 1 asistencia<br><strong>Valoración:</strong> 85</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Joselu",
+      "posicion": "Delantero",
+      "equipo": "Real Madrid",
+      "goles": 12,
+      "asistencias": 4,
+      "edad": 33,
+      "nacionalidad": "España",
+      "dorsal": 14,
+      "pierna": "Derecha",
+      "valoracion": 79
+    },
+    "content": "<h2>Joselu #14</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 33 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 12 goles, 4 asistencias<br><strong>Valoración:</strong> 79</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Álvaro Morata",
+      "posicion": "Delantero",
+      "equipo": "Atlético Madrid",
+      "goles": 21,
+      "asistencias": 5,
+      "edad": 31,
+      "nacionalidad": "España",
+      "dorsal": 19,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Álvaro Morata #19</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 21 goles, 5 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Frenkie de Jong",
+      "posicion": "Centrocampista",
+      "equipo": "FC Barcelona",
+      "goles": 2,
+      "asistencias": 4,
+      "edad": 26,
+      "nacionalidad": "Países Bajos",
+      "dorsal": 21,
+      "pierna": "Derecha",
+      "valoracion": 87
+    },
+    "content": "<h2>Frenkie de Jong #21</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 26 años<br><strong>Nacionalidad:</strong> Países Bajos<br><strong>Stats:</strong> 2 goles, 4 asistencias<br><strong>Valoración:</strong> 87</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Luka Modrić",
+      "posicion": "Centrocampista",
+      "equipo": "Real Madrid",
+      "goles": 3,
+      "asistencias": 9,
+      "edad": 38,
+      "nacionalidad": "Croacia",
+      "dorsal": 10,
+      "pierna": "Derecha",
+      "valoracion": 84
+    },
+    "content": "<h2>Luka Modrić #10</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 38 años<br><strong>Nacionalidad:</strong> Croacia<br><strong>Stats:</strong> 3 goles, 9 asistencias<br><strong>Valoración:</strong> 84</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Koke",
+      "posicion": "Centrocampista",
+      "equipo": "Atlético Madrid",
+      "goles": 2,
+      "asistencias": 8,
+      "edad": 31,
+      "nacionalidad": "España",
+      "dorsal": 6,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Koke #6</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 2 goles, 8 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Mikel Oyarzabal",
+      "posicion": "Delantero",
+      "equipo": "Real Sociedad",
+      "goles": 14,
+      "asistencias": 7,
+      "edad": 26,
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "pierna": "Izquierda",
+      "valoracion": 83
+    },
+    "content": "<h2>Mikel Oyarzabal #10</h2><p><strong>Equipo:</strong> Real Sociedad<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 26 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 14 goles, 7 asistencias<br><strong>Valoración:</strong> 83</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Iago Aspas",
+      "posicion": "Delantero",
+      "equipo": "Celta de Vigo",
+      "goles": 15,
+      "asistencias": 9,
+      "edad": 36,
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "pierna": "Izquierda",
+      "valoracion": 81
+    },
+    "content": "<h2>Iago Aspas #10</h2><p><strong>Equipo:</strong> Celta de Vigo<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 36 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 15 goles, 9 asistencias<br><strong>Valoración:</strong> 81</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Jules Koundé",
+      "posicion": "Defensa",
+      "equipo": "FC Barcelona",
+      "goles": 1,
+      "asistencias": 2,
+      "edad": 25,
+      "nacionalidad": "Francia",
+      "dorsal": 23,
+      "pierna": "Derecha",
+      "valoracion": 84
+    },
+    "content": "<h2>Jules Koundé #23</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Defensa<br><strong>Edad:</strong> 25 años<br><strong>Nacionalidad:</strong> Francia<br><strong>Stats:</strong> 1 gol, 2 asistencias<br><strong>Valoración:</strong> 84</p>"
+  },
+  {
+    "categories": {
+      "nombre": "David Alaba",
+      "posicion": "Defensa",
+      "equipo": "Real Madrid",
+      "goles": 1,
+      "asistencias": 1,
+      "edad": 31,
+      "nacionalidad": "Austria",
+      "dorsal": 4,
+      "pierna": "Izquierda",
+      "valoracion": 85
+    },
+    "content": "<h2>David Alaba #4</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Defensa<br><strong>Edad:</strong> 31 años<br><strong>Nacionalidad:</strong> Austria<br><strong>Stats:</strong> 1 gol, 1 asistencia<br><strong>Valoración:</strong> 85</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Rodri De Paul",
+      "posicion": "Centrocampista",
+      "equipo": "Atlético Madrid",
+      "goles": 5,
+      "asistencias": 6,
+      "edad": 29,
+      "nacionalidad": "Argentina",
+      "dorsal": 5,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Rodri De Paul #5</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 29 años<br><strong>Nacionalidad:</strong> Argentina<br><strong>Stats:</strong> 5 goles, 6 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Borja Iglesias",
+      "posicion": "Delantero",
+      "equipo": "Real Betis",
+      "goles": 11,
+      "asistencias": 3,
+      "edad": 30,
+      "nacionalidad": "España",
+      "dorsal": 9,
+      "pierna": "Derecha",
+      "valoracion": 79
+    },
+    "content": "<h2>Borja Iglesias #9</h2><p><strong>Equipo:</strong> Real Betis<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 30 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 11 goles, 3 asistencias<br><strong>Valoración:</strong> 79</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Iñaki Williams",
+      "posicion": "Delantero",
+      "equipo": "Athletic Bilbao",
+      "goles": 10,
+      "asistencias": 6,
+      "edad": 29,
+      "nacionalidad": "Ghana",
+      "dorsal": 9,
+      "pierna": "Derecha",
+      "valoracion": 81
+    },
+    "content": "<h2>Iñaki Williams #9</h2><p><strong>Equipo:</strong> Athletic Bilbao<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 29 años<br><strong>Nacionalidad:</strong> Ghana<br><strong>Stats:</strong> 10 goles, 6 asistencias<br><strong>Valoración:</strong> 81</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Hugo Duro",
+      "posicion": "Delantero",
+      "equipo": "Valencia CF",
+      "goles": 13,
+      "asistencias": 4,
+      "edad": 24,
+      "nacionalidad": "España",
+      "dorsal": 19,
+      "pierna": "Izquierda",
+      "valoracion": 78
+    },
+    "content": "<h2>Hugo Duro #19</h2><p><strong>Equipo:</strong> Valencia CF<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 24 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 13 goles, 4 asistencias<br><strong>Valoración:</strong> 78</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Nico Williams",
+      "posicion": "Delantero",
+      "equipo": "Athletic Bilbao",
+      "goles": 8,
+      "asistencias": 11,
+      "edad": 21,
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Nico Williams #10</h2><p><strong>Equipo:</strong> Athletic Bilbao<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 21 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 8 goles, 11 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Raphinha",
+      "posicion": "Delantero",
+      "equipo": "FC Barcelona",
+      "goles": 9,
+      "asistencias": 10,
+      "edad": 27,
+      "nacionalidad": "Brasil",
+      "dorsal": 11,
+      "pierna": "Izquierda",
+      "valoracion": 84
+    },
+    "content": "<h2>Raphinha #11</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 27 años<br><strong>Nacionalidad:</strong> Brasil<br><strong>Stats:</strong> 9 goles, 10 asistencias<br><strong>Valoración:</strong> 84</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Rodrygo",
+      "posicion": "Delantero",
+      "equipo": "Real Madrid",
+      "goles": 11,
+      "asistencias": 8,
+      "edad": 23,
+      "nacionalidad": "Brasil",
+      "dorsal": 11,
+      "pierna": "Derecha",
+      "valoracion": 85
+    },
+    "content": "<h2>Rodrygo #11</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 23 años<br><strong>Nacionalidad:</strong> Brasil<br><strong>Stats:</strong> 11 goles, 8 asistencias<br><strong>Valoración:</strong> 85</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Unai Simón",
+      "posicion": "Portero",
+      "equipo": "Athletic Bilbao",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 26,
+      "nacionalidad": "España",
+      "dorsal": 1,
+      "pierna": "Derecha",
+      "valoracion": 84
+    },
+    "content": "<h2>Unai Simón #1</h2><p><strong>Equipo:</strong> Athletic Bilbao<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 26 años<br><strong>Nacionalidad:</strong> España<br><strong>Valoración:</strong> 84</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Rui Silva",
+      "posicion": "Portero",
+      "equipo": "Real Betis",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 29,
+      "nacionalidad": "Portugal",
+      "dorsal": 13,
+      "pierna": "Derecha",
+      "valoracion": 81
+    },
+    "content": "<h2>Rui Silva #13</h2><p><strong>Equipo:</strong> Real Betis<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 29 años<br><strong>Nacionalidad:</strong> Portugal<br><strong>Valoración:</strong> 81</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Sergio Canales",
+      "posicion": "Centrocampista",
+      "equipo": "Monterrey",
+      "goles": 7,
+      "asistencias": 10,
+      "edad": 32,
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "pierna": "Izquierda",
+      "valoracion": 82
+    },
+    "content": "<h2>Sergio Canales #10</h2><p><strong>Equipo:</strong> Monterrey<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 32 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 7 goles, 10 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Álex Remiro",
+      "posicion": "Portero",
+      "equipo": "Real Sociedad",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 28,
+      "nacionalidad": "España",
+      "dorsal": 1,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Álex Remiro #1</h2><p><strong>Equipo:</strong> Real Sociedad<br><strong>Posición:</strong> Portero<br><strong>Edad:</strong> 28 años<br><strong>Nacionalidad:</strong> España<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Memphis Depay",
+      "posicion": "Delantero",
+      "equipo": "Atlético Madrid",
+      "goles": 9,
+      "asistencias": 4,
+      "edad": 29,
+      "nacionalidad": "Países Bajos",
+      "dorsal": 9,
+      "pierna": "Derecha",
+      "valoracion": 81
+    },
+    "content": "<h2>Memphis Depay #9</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 29 años<br><strong>Nacionalidad:</strong> Países Bajos<br><strong>Stats:</strong> 9 goles, 4 asistencias<br><strong>Valoración:</strong> 81</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Ilkay Gündogan",
+      "posicion": "Centrocampista",
+      "equipo": "FC Barcelona",
+      "goles": 5,
+      "asistencias": 8,
+      "edad": 33,
+      "nacionalidad": "Alemania",
+      "dorsal": 22,
+      "pierna": "Derecha",
+      "valoracion": 86
+    },
+    "content": "<h2>Ilkay Gündogan #22</h2><p><strong>Equipo:</strong> FC Barcelona<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 33 años<br><strong>Nacionalidad:</strong> Alemania<br><strong>Stats:</strong> 5 goles, 8 asistencias<br><strong>Valoración:</strong> 86</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Eduardo Camavinga",
+      "posicion": "Centrocampista",
+      "equipo": "Real Madrid",
+      "goles": 2,
+      "asistencias": 3,
+      "edad": 21,
+      "nacionalidad": "Francia",
+      "dorsal": 12,
+      "pierna": "Izquierda",
+      "valoracion": 83
+    },
+    "content": "<h2>Eduardo Camavinga #12</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 21 años<br><strong>Nacionalidad:</strong> Francia<br><strong>Stats:</strong> 2 goles, 3 asistencias<br><strong>Valoración:</strong> 83</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Axel Witsel",
+      "posicion": "Defensa",
+      "equipo": "Atlético Madrid",
+      "goles": 0,
+      "asistencias": 0,
+      "edad": 35,
+      "nacionalidad": "Bélgica",
+      "dorsal": 20,
+      "pierna": "Derecha",
+      "valoracion": 78
+    },
+    "content": "<h2>Axel Witsel #20</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Defensa<br><strong>Edad:</strong> 35 años<br><strong>Nacionalidad:</strong> Bélgica<br><strong>Valoración:</strong> 78</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Dani Carvajal",
+      "posicion": "Defensa",
+      "equipo": "Real Madrid",
+      "goles": 1,
+      "asistencias": 5,
+      "edad": 32,
+      "nacionalidad": "España",
+      "dorsal": 2,
+      "pierna": "Derecha",
+      "valoracion": 83
+    },
+    "content": "<h2>Dani Carvajal #2</h2><p><strong>Equipo:</strong> Real Madrid<br><strong>Posición:</strong> Defensa<br><strong>Edad:</strong> 32 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 1 gol, 5 asistencias<br><strong>Valoración:</strong> 83</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Marcos Llorente",
+      "posicion": "Centrocampista",
+      "equipo": "Atlético Madrid",
+      "goles": 6,
+      "asistencias": 7,
+      "edad": 29,
+      "nacionalidad": "España",
+      "dorsal": 14,
+      "pierna": "Derecha",
+      "valoracion": 84
+    },
+    "content": "<h2>Marcos Llorente #14</h2><p><strong>Equipo:</strong> Atlético Madrid<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 29 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 6 goles, 7 asistencias<br><strong>Valoración:</strong> 84</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Iago Aspas",
+      "posicion": "Delantero",
+      "equipo": "Celta de Vigo",
+      "goles": 12,
+      "asistencias": 8,
+      "edad": 36,
+      "nacionalidad": "España",
+      "dorsal": 10,
+      "pierna": "Izquierda",
+      "valoracion": 81
+    },
+    "content": "<h2>Iago Aspas #10</h2><p><strong>Equipo:</strong> Celta de Vigo<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 36 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 12 goles, 8 asistencias<br><strong>Valoración:</strong> 81</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Álex Baena",
+      "posicion": "Centrocampista",
+      "equipo": "Villarreal CF",
+      "goles": 8,
+      "asistencias": 12,
+      "edad": 22,
+      "nacionalidad": "España",
+      "dorsal": 16,
+      "pierna": "Derecha",
+      "valoracion": 82
+    },
+    "content": "<h2>Álex Baena #16</h2><p><strong>Equipo:</strong> Villarreal CF<br><strong>Posición:</strong> Centrocampista<br><strong>Edad:</strong> 22 años<br><strong>Nacionalidad:</strong> España<br><strong>Stats:</strong> 8 goles, 12 asistencias<br><strong>Valoración:</strong> 82</p>"
+  },
+  {
+    "categories": {
+      "nombre": "Alexander Sørloth",
+      "posicion": "Delantero",
+      "equipo": "Villarreal CF",
+      "goles": 17,
+      "asistencias": 3,
+      "edad": 28,
+      "nacionalidad": "Noruega",
+      "dorsal": 11,
+      "pierna": "Izquierda",
+      "valoracion": 80
+    },
+    "content": "<h2>Alexander Sørloth #11</h2><p><strong>Equipo:</strong> Villarreal CF<br><strong>Posición:</strong> Delantero<br><strong>Edad:</strong> 28 años<br><strong>Nacionalidad:</strong> Noruega<br><strong>Stats:</strong> 17 goles, 3 asistencias<br><strong>Valoración:</strong> 80</p>"
+  }
+]
