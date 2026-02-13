@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Memento — Red 3D Interactiva</title>
+    <link rel="icon" type="image/png" href="logo_azul.png">
+    <link rel="apple-touch-icon" href="logo_azul.png">
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <style>
       body,html{
@@ -838,6 +840,21 @@
         background: rgba(255, 255, 255, 0.03);
         border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
         border-radius: 16px 16px 0 0;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      .stats-header:active {
+        opacity: 0.7;
+      }
+
+      .stats-header:hover {
+        background: rgba(255, 255, 255, 0.05);
       }
 
       .stats-title {
@@ -851,11 +868,39 @@
         letter-spacing: -0.2px;
       }
 
+      .stats-toggle {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.4);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+      }
+
+      .stats-header:hover .stats-toggle {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      #estadisticas.collapsed .stats-toggle {
+        transform: rotate(-90deg);
+      }
+
       .stats-content {
         padding: 16px;
         display: flex;
         flex-direction: column;
         gap: 12px;
+        max-height: 2000px;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.25s ease-out;
+        opacity: 1;
+        overflow: hidden;
+      }
+
+      #estadisticas.collapsed .stats-content {
+        max-height: 0;
+        padding: 0 16px;
+        opacity: 0;
+      }
+
+      #estadisticas.collapsed {
+        border-bottom: none;
       }
 
       .stat-item {
@@ -947,11 +992,12 @@
 
     <!-- Panel de Estadísticas Live -->
     <div id="estadisticas">
-      <div class="stats-header">
+      <div class="stats-header" onclick="toggleEstadisticas()">
         <h2 class="stats-title">
           <span>📊</span>
           <span>Estadísticas Live</span>
         </h2>
+        <span class="stats-toggle">▼</span>
       </div>
       <div class="stats-content">
         <div class="stat-item">
@@ -1206,6 +1252,12 @@
       function toggleSection(headerElement) {
         const section = headerElement.parentElement;
         section.classList.toggle('collapsed');
+      }
+
+      // ===== FUNCIÓN PARA PANEL DE ESTADÍSTICAS COLAPSABLE =====
+      function toggleEstadisticas() {
+        const panel = document.getElementById('estadisticas');
+        panel.classList.toggle('collapsed');
       }
 
       // ===== SISTEMA DE NOTIFICACIONES TOAST =====
