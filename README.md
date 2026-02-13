@@ -19,7 +19,7 @@
 ❌ Variables CSS - Sistema de colores coherente
 ✅ Botones gradiente - Con efectos hover
 ❌ Modal mejorado - Diseño tipo tarjeta
-❌ Iluminación 3D - 5 luces con colores temáticos
+✅ Iluminación 3D - 5 luces con colores temáticos
 ❌ Scrollbar custom - Estilo del tema
 ❌ Tags visuales - Chips de propiedades
 
@@ -67,6 +67,25 @@ Sistema visual de feedback con 4 tipos:
 - Animaciones suaves de entrada/salida
 - Efecto glassmorphism integrado
 - Múltiples toasts apilables
+
+### 💡 Sistema de Iluminación 3D Dinámica
+
+Sistema de 5 luces **animadas** con colores temáticos que pulsan al ritmo del sistema:
+
+- **🌟 Luz Ambiental Base** (#88c8ff) - Pulsación lenta (4s) para respiración ambiente
+- **✅ Luz Success** (#34D399) - Pulsación rápida (2.5s) energizante arriba-derecha
+- **⚠️ Luz Warning** (#FBBF24) - Pulsación media (3.2s) cálida izquierda-frontal
+- **ℹ️ Luz Info** (#60A5FA) - Respiración lenta (3.8s) focal principal centro-atrás
+- **🔥 Luz Accent** (#F87171) - Latido rápido (2s) sutil derecha-atrás
+
+**Características técnicas:**
+- Animaciones A-Frame nativas (`property: light.intensity`)
+- Cada luz tiene ritmo único (2s a 4s) para efecto orgánico
+- Rangos de intensidad calibrados sin molestar visualmente
+- Funciones easing variadas: `easeInOutSine`, `easeInOutQuad`, `easeInOutCubic`
+- Colores extraídos del sistema de toasts para coherencia temática
+- Posicionamiento 3D estratégico para iluminación envolvente
+- **Efecto "respiración" continuo** que da vida a la escena
 
 ## 🗂️ Archivos de Ejemplo Incluidos
 
