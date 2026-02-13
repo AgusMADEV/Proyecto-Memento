@@ -2,14 +2,16 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Red 3D de personas - Animaciones & Glassmorphism</title>
+    <title>Memento — Red 3D Interactiva</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
     <style>
       body,html{
         margin:0;
         padding:0;
-        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
         overflow:hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       /* ===== ANIMACIONES CSS ===== */
@@ -35,7 +37,7 @@
 
       @keyframes slideIn {
         from {
-          transform: translateX(-100%);
+          transform: translateX(-20px);
           opacity: 0;
         }
         to {
@@ -73,252 +75,511 @@
         }
       }
 
-      /* ===== GLASSMORPHISM - Panel de Control ===== */
+      /* ===== FROSTED GLASS - Panel de Control macOS Style ===== */
       #controles{
         position:fixed;
-        top:10px;
-        left:10px;
-        padding:12px 14px;
+        top:20px;
+        left:20px;
+        width: 340px;
+        padding:0;
         
-        /* Efecto glassmorphism */
-        background: rgba(15, 23, 42, 0.75);
-        backdrop-filter: blur(12px) saturate(180%);
-        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        /* Efecto frosted glass macOS */
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
         
-        border: 1px solid rgba(255, 255, 255, 0.18);
-        border-radius: 12px;
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+        border: 0.5px solid rgba(255, 255, 255, 0.18);
+        border-radius: 16px;
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.08),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
         
-        font-size:12px;
+        font-size:13px;
         z-index:10;
         max-height:90vh;
-        overflow:auto;
-        color:#f1f5f9;
+        overflow:hidden;
+        color:#ffffff;
+        display: flex;
+        flex-direction: column;
         
         /* Animación de entrada */
-        animation: slideIn 0.6s ease-out;
+        animation: slideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
-      #controles::-webkit-scrollbar {
+      /* Header del Dashboard - Frosted Style */
+      .dashboard-header {
+        padding: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px 16px 0 0;
+        position: relative;
+      }
+
+      .dashboard-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: -0.3px;
+      }
+
+      .dashboard-title span:first-child {
+        font-size: 20px;
+        opacity: 0.9;
+      }
+
+      .dashboard-subtitle {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.45);
+        margin: 4px 0 0 0;
+        font-weight: 400;
+        letter-spacing: 0;
+      }
+
+      /* Contenido con scroll */
+      .dashboard-content {
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: calc(90vh - 88px);
+        padding: 20px;
+        flex: 1;
+      }
+
+      .dashboard-content::-webkit-scrollbar {
         width: 8px;
       }
 
-      #controles::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 4px;
+      .dashboard-content::-webkit-scrollbar-track {
+        background: transparent;
+        margin: 4px;
       }
 
-      #controles::-webkit-scrollbar-thumb {
+      .dashboard-content::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
       }
 
-      #controles::-webkit-scrollbar-thumb:hover {
+      .dashboard-content::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.3);
+        background-clip: padding-box;
       }
 
-      #controles label{
-        display:block;
-        margin-bottom:6px;
-        animation: fadeIn 0.8s ease-out;
+      /* Secciones colapsables - Frosted Style */
+      .control-section {
+        margin-bottom: 8px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 0.5px solid rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .control-section:hover {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .section-header {
+        padding: 12px 16px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+        transition: all 0.2s ease;
+        position: relative;
+      }
+
+      .section-header:active {
+        opacity: 0.7;
+      }
+
+      .section-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        letter-spacing: -0.1px;
+      }
+
+      .section-title .prop-counter {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 20px;
+        height: 18px;
+        padding: 0 6px;
+        margin-left: 4px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 9px;
+        font-size: 10px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.8);
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        letter-spacing: 0;
+      }
+
+      .section-icon {
+        font-size: 15px;
+        opacity: 0.8;
+        transition: transform 0.25s ease;
+      }
+
+      .section-header:hover .section-icon {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+
+      .section-toggle {
+        font-size: 11px;
+        color: rgba(255, 255, 255, 0.4);
+        transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.2s ease;
+      }
+
+      .section-header:hover .section-toggle {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .control-section.collapsed .section-toggle {
+        transform: rotate(-90deg);
+      }
+
+      .section-content {
+        padding: 0 16px 12px 16px;
+        display: block;
+        animation: expandSection 0.25s ease-out;
+        max-height: 2000px;
+        transition: max-height 0.3s ease-out, padding 0.3s ease-out, opacity 0.25s ease-out;
+        opacity: 1;
+        overflow: visible;
+      }
+
+      .control-section.collapsed .section-content {
+        max-height: 0;
+        padding: 0 16px;
+        opacity: 0;
+        overflow: hidden;
+      }
+
+      @keyframes expandSection {
+        from {
+          opacity: 0;
+          transform: translateY(-5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Controles de input - Frosted Style */
+      .control-group {
+        margin-bottom: 16px;
+      }
+
+      .control-group:last-child {
+        margin-bottom: 0;
+      }
+
+      .control-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.65);
+        font-weight: 500;
+      }
+
+      .control-value {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 42px;
+        height: 22px;
+        padding: 0 10px;
+        background: rgba(255, 255, 255, 0.12);
+        border-radius: 6px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 11px;
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
+        letter-spacing: 0.3px;
+        font-variant-numeric: tabular-nums;
       }
 
       #controles input[type=range]{
-        width:150px;
+        width:100%;
         cursor: pointer;
         transition: all 0.3s ease;
       }
 
       #controles input[type=range]:hover {
-        transform: scale(1.02);
+        opacity: 1;
       }
 
-      #controles input[type=checkbox] {
+      #controles input[type=range]:focus {
+        outline: none;
+      }
+
+      /* Checkbox - Frosted Style */
+      .checkbox-group {
+        display: flex;
+        align-items: center;
+        padding: 10px 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         cursor: pointer;
-        transition: transform 0.2s ease;
+        border: 0.5px solid rgba(255, 255, 255, 0.06);
       }
 
-      #controles input[type=checkbox]:hover {
-        transform: scale(1.1);
+      .checkbox-group:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.1);
       }
 
-      #controles span.valor{
-        display:inline-block;
-        min-width:35px;
-        text-align:right;
-        margin-left:4px;
-        font-weight: 600;
-        color: #38bdf8;
-        text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+      .checkbox-group input[type=checkbox] {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
+        cursor: pointer;
+        accent-color: rgba(255, 255, 255, 0.9);
       }
 
-      #controles .fila{
-        margin-top:6px;
-        margin-bottom:6px;
-        animation: fadeIn 0.8s ease-out;
-      }
-
-      #propiedades .bloque-prop{
-        border-top:1px solid rgba(255, 255, 255, 0.15);
-        margin-top:6px;
-        padding-top:6px;
-        animation: slideInDown 0.5s ease-out;
-      }
-
-      #propiedades .titulo-prop{
-        font-weight:bold;
-        margin-bottom:3px;
-        color: #fbbf24;
-        text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
-      }
-
-      #propiedades label{
-        display:inline-block;
-        margin-right:8px;
-        margin-bottom:3px;
+      .checkbox-group label {
+        flex: 1;
+        cursor: pointer;
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.75);
+        font-weight: 500;
         transition: color 0.2s ease;
       }
 
+      .checkbox-group:hover label {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Propiedades dinámicas - Frosted Style */
+      #propiedades {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      #propiedades .bloque-prop{
+        padding: 10px 0;
+        margin-bottom: 10px;
+        animation: slideInDown 0.4s ease-out;
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
+      }
+
+      #propiedades .bloque-prop:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      #propiedades .titulo-prop{
+        font-weight: 600;
+        margin-bottom: 8px;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.8px;
+      }
+
+      #propiedades label{
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 10px;
+        margin: 0 6px 6px 0;
+        background: rgba(255, 255, 255, 0.08);
+        border: 0.5px solid rgba(255, 255, 255, 0.12);
+        border-radius: 6px;
+        font-size: 11px;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+        white-space: nowrap;
+      }
+
       #propiedades label:hover {
-        color: #38bdf8;
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
       }
 
+      #propiedades input[type=checkbox] {
+        margin-right: 6px;
+        accent-color: rgba(255, 255, 255, 0.9);
+        flex-shrink: 0;
+      }
+
+      /* Ayuda de teclas - Frosted Style */
       #ayudaTeclas{
-        font-size:11px;
-        margin-top:8px;
-        padding-top: 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        color:#cbd5e1;
-        line-height: 1.5;
-        animation: fadeIn 1.2s ease-out;
+        font-size: 11px;
+        padding: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        border-radius: 8px;
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.7;
+        animation: fadeIn 1s ease-out;
       }
 
-      /* ===== GLASSMORPHISM - Modal 2D ===== */
+      #ayudaTeclas strong {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 11px;
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+
+      /* ===== FROSTED GLASS - Modal 2D ===== */
       #modalOverlay{
         position:fixed;
         top:0;
         left:0;
         width:100vw;
         height:100vh;
-        background:rgba(0, 0, 0, 0.75);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        background:rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         display:none;
         align-items:center;
         justify-content:center;
         z-index:20;
-        animation: fadeIn 0.3s ease-out;
+        animation: fadeIn 0.25s ease-out;
       }
 
       #modalCaja{
-        /* Efecto glassmorphism */
-        background: rgba(30, 41, 59, 0.85);
-        backdrop-filter: blur(16px) saturate(180%);
-        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        /* Efecto frosted glass */
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
         
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 0.5px solid rgba(255, 255, 255, 0.18);
         border-radius: 16px;
-        box-shadow: 0 12px 48px 0 rgba(0, 0, 0, 0.6);
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.08),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
         
         max-width:600px;
         max-height:80vh;
         width:90%;
-        color:#f1f5f9;
+        color:rgba(255, 255, 255, 0.95);
         display:flex;
         flex-direction:column;
         
         /* Animación de entrada */
-        animation: scaleIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       #modalHeader{
-        padding:12px 16px;
-        border-bottom:1px solid rgba(255, 255, 255, 0.2);
+        padding:16px 20px;
+        border-bottom:0.5px solid rgba(255, 255, 255, 0.12);
         display:flex;
         justify-content:space-between;
         align-items:center;
         font-size:15px;
-        background: rgba(51, 65, 85, 0.5);
+        background: rgba(255, 255, 255, 0.03);
         border-radius: 16px 16px 0 0;
       }
 
       #modalTitulo{
-        font-weight:bold;
+        font-weight:600;
         font-size: 16px;
-        color: #38bdf8;
-        text-shadow: 0 0 15px rgba(56, 189, 248, 0.5);
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: -0.2px;
       }
 
       #modalCerrar{
         cursor:pointer;
         padding:6px 12px;
-        border-radius:8px;
-        border:1px solid rgba(255, 255, 255, 0.3);
-        background: rgba(239, 68, 68, 0.2);
+        border-radius:6px;
+        border:0.5px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 255, 255, 0.08);
         font-size:12px;
-        color: #fecaca;
-        font-weight: 600;
-        transition: all 0.3s ease;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 500;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       #modalCerrar:hover{
-        background: rgba(239, 68, 68, 0.4);
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: scale(1.02);
       }
 
       #modalCerrar:active{
         transform: scale(0.98);
+        opacity: 0.8;
       }
 
       #modalContenido{
-        padding:16px;
+        padding:20px;
         overflow:auto;
         font-size:14px;
         line-height:1.6;
-        animation: fadeIn 0.6s ease-out 0.2s backwards;
+        animation: fadeIn 0.4s ease-out 0.1s backwards;
       }
 
       #modalContenido::-webkit-scrollbar {
-        width: 10px;
+        width: 8px;
       }
 
       #modalContenido::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 5px;
+        background: transparent;
+        margin: 4px;
       }
 
       #modalContenido::-webkit-scrollbar-thumb {
         background: rgba(255, 255, 255, 0.2);
-        border-radius: 5px;
+        border-radius: 10px;
+        border: 2px solid transparent;
+        background-clip: padding-box;
       }
 
       #modalContenido::-webkit-scrollbar-thumb:hover {
         background: rgba(255, 255, 255, 0.3);
+        background-clip: padding-box;
       }
 
       #modalContenido h2 {
-        color: #fbbf24;
+        color: rgba(255, 255, 255, 0.95);
         margin-top: 0;
-        text-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.2px;
       }
 
       #modalContenido strong {
-        color: #38bdf8;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 600;
       }
 
-      /* ===== Loader animado ===== */
+      /* ===== Loader - Frosted Style ===== */
       .loader {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        border: 5px solid rgba(56, 189, 248, 0.2);
-        border-top: 5px solid #38bdf8;
+        width: 50px;
+        height: 50px;
+        border: 3px solid rgba(255, 255, 255, 0.15);
+        border-top: 3px solid rgba(255, 255, 255, 0.9);
         border-radius: 50%;
-        animation: spin 1s linear infinite;
+        animation: spin 0.8s linear infinite;
         z-index: 100;
         display: none;
       }
@@ -340,14 +601,15 @@
         animation: slideIn 0.5s ease-out;
       }
 
-      /* Efecto hover en sliders */
+      /* Sliders - Frosted macOS Style */
       input[type="range"] {
         -webkit-appearance: none;
         appearance: none;
         height: 4px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 2px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
         outline: none;
+        position: relative;
       }
 
       input[type="range"]::-webkit-slider-thumb {
@@ -355,95 +617,110 @@
         appearance: none;
         width: 16px;
         height: 16px;
-        background: #38bdf8;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 50%;
         cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
       }
 
       input[type="range"]::-webkit-slider-thumb:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+        transform: scale(1.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+      }
+
+      input[type="range"]::-webkit-slider-thumb:active {
+        transform: scale(1.05);
       }
 
       input[type="range"]::-moz-range-thumb {
         width: 16px;
         height: 16px;
-        background: #38bdf8;
+        background: rgba(255, 255, 255, 0.95);
         border-radius: 50%;
         cursor: pointer;
-        border: none;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
       }
 
       input[type="range"]::-moz-range-thumb:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 15px rgba(56, 189, 248, 0.8);
+        transform: scale(1.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
       }
 
-      /* ===== BOTONES DE ACCIÓN ===== */
+      input[type="range"]::-moz-range-thumb:active {
+        transform: scale(1.05);
+      }
+
+      /* ===== BOTONES - Frosted macOS Style ===== */
       .btn-action {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
         width: 100%;
-        padding: 8px 12px;
+        padding: 10px 16px;
         margin: 6px 0;
-        border: 1px solid rgba(255, 255, 255, 0.3);
+        border: 0.5px solid rgba(255, 255, 255, 0.15);
         border-radius: 8px;
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(59, 130, 246, 0.2));
-        color: #f1f5f9;
+        background: rgba(255, 255, 255, 0.08);
+        color: rgba(255, 255, 255, 0.9);
         font-size: 12px;
-        font-weight: 600;
+        font-weight: 500;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         text-align: center;
-        backdrop-filter: blur(8px);
+        backdrop-filter: blur(10px);
       }
 
       .btn-action:hover {
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.4), rgba(59, 130, 246, 0.4));
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       }
 
       .btn-action:active {
         transform: translateY(0);
+        opacity: 0.8;
       }
 
       .btn-export {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(22, 163, 74, 0.2));
+        background: rgba(52, 211, 153, 0.12);
+        border-color: rgba(52, 211, 153, 0.2);
+        color: rgba(167, 243, 208, 0.95);
       }
 
       .btn-export:hover {
-        background: linear-gradient(135deg, rgba(34, 197, 94, 0.4), rgba(22, 163, 74, 0.4));
-        box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+        background: rgba(52, 211, 153, 0.18);
+        border-color: rgba(52, 211, 153, 0.3);
       }
 
       .btn-import {
-        background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(147, 51, 234, 0.2));
+        background: rgba(139, 92, 246, 0.12);
+        border-color: rgba(139, 92, 246, 0.2);
+        color: rgba(196, 181, 253, 0.95);
       }
 
       .btn-import:hover {
-        background: linear-gradient(135deg, rgba(168, 85, 247, 0.4), rgba(147, 51, 234, 0.4));
-        box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+        background: rgba(139, 92, 246, 0.18);
+        border-color: rgba(139, 92, 246, 0.3);
       }
 
-      .seccion-titulo {
-        font-weight: bold;
-        color: #fbbf24;
-        margin-top: 12px;
-        margin-bottom: 6px;
-        padding-top: 8px;
-        border-top: 1px solid rgba(255, 255, 255, 0.15);
-        text-shadow: 0 0 10px rgba(251, 191, 36, 0.3);
+      /* Divider - Frosted Style */
+      .divider {
+        height: 0.5px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+        margin: 16px 0;
       }
 
-      /* ===== NOTIFICACIONES TOAST ===== */
+      /* ===== NOTIFICACIONES TOAST - Frosted Style ===== */
       .toast-container {
         position: fixed;
-        top: 20px;
-        right: 20px;
+        top: 24px;
+        right: 24px;
         z-index: 9999;
         display: flex;
         flex-direction: column;
@@ -456,29 +733,33 @@
         max-width: 400px;
         padding: 14px 18px;
         border-radius: 12px;
-        background: rgba(30, 41, 59, 0.95);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-        color: #f1f5f9;
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
+        border: 0.5px solid rgba(255, 255, 255, 0.18);
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.08),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        color: rgba(255, 255, 255, 0.95);
         font-size: 13px;
         font-weight: 500;
         display: flex;
         align-items: center;
         gap: 12px;
         pointer-events: auto;
-        animation: toastSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        animation: toastSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       }
 
       .toast.closing {
-        animation: toastSlideOut 0.3s ease-out forwards;
+        animation: toastSlideOut 0.25s ease-out forwards;
       }
 
       .toast-icon {
-        font-size: 20px;
+        font-size: 18px;
         line-height: 1;
         flex-shrink: 0;
+        opacity: 0.9;
       }
 
       .toast-message {
@@ -487,24 +768,24 @@
       }
 
       .toast-success {
-        border-left: 4px solid #22c55e;
+        border-left: 2px solid rgba(52, 211, 153, 0.6);
       }
 
       .toast-error {
-        border-left: 4px solid #ef4444;
+        border-left: 2px solid rgba(248, 113, 113, 0.6);
       }
 
       .toast-info {
-        border-left: 4px solid #3b82f6;
+        border-left: 2px solid rgba(96, 165, 250, 0.6);
       }
 
       .toast-warning {
-        border-left: 4px solid #f59e0b;
+        border-left: 2px solid rgba(251, 191, 36, 0.6);
       }
 
       @keyframes toastSlideIn {
         from {
-          transform: translateX(400px);
+          transform: translateX(100px);
           opacity: 0;
         }
         to {
@@ -519,7 +800,7 @@
           opacity: 1;
         }
         to {
-          transform: translateX(400px);
+          transform: translateX(100px);
           opacity: 0;
         }
       }
@@ -537,60 +818,147 @@
 
     <!-- Panel de control -->
     <div id="controles">
-      <label>
-        Grosor mínimo (solo UI)
-        <input id="grosorMin" type="range" min="1" max="10" value="1">
-        <span id="grosorMinValor" class="valor">1</span>
-      </label>
-      <label>
-        Grosor máximo (solo UI)
-        <input id="grosorMax" type="range" min="1" max="20" value="6">
-        <span id="grosorMaxValor" class="valor">6</span>
-      </label>
-
-      <div class="fila">
-        Máx conexiones/píldora
-        <input id="maxConexiones" type="range" min="1" max="6" value="2">
-        <span id="maxConexionesValor" class="valor">2</span>
+      <!-- Header del Dashboard -->
+      <div class="dashboard-header">
+        <h1 class="dashboard-title">
+          <span>◆</span>
+          <span>Memento</span>
+        </h1>
+        <p class="dashboard-subtitle">Control Panel</p>
       </div>
 
-      <div class="fila">
-        <label>
-          <input id="chkMostrarLineas" type="checkbox" checked>
-          Mostrar conexiones
-        </label>
-      </div>
+      <!-- Contenido con scroll -->
+      <div class="dashboard-content">
+        
+        <!-- Sección: Visualización -->
+        <div class="control-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-title">
+              <span class="section-icon">○</span>
+              <span>Visualización</span>
+            </div>
+            <span class="section-toggle">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="control-group">
+              <div class="control-label">
+                <span>Grosor mínimo</span>
+                <span id="grosorMinValor" class="control-value">1</span>
+              </div>
+              <input id="grosorMin" type="range" min="1" max="10" value="1">
+            </div>
 
-      <div class="fila">
-        <label>
-          <input id="chkMostrarCapsulas" type="checkbox" checked>
-          Mostrar cápsulas
-        </label>
-      </div>
+            <div class="control-group">
+              <div class="control-label">
+                <span>Grosor máximo</span>
+                <span id="grosorMaxValor" class="control-value">6</span>
+              </div>
+              <input id="grosorMax" type="range" min="1" max="20" value="6">
+            </div>
 
-      <div class="fila">
-        Transparencia cápsulas
-        <input id="opacidadCapsulas" type="range" min="5" max="100" value="25">
-        <span id="opacidadCapsulasValor" class="valor">25%</span>
-      </div>
+            <div class="control-group">
+              <div class="control-label">
+                <span>Transparencia cápsulas</span>
+                <span id="opacidadCapsulasValor" class="control-value">25%</span>
+              </div>
+              <input id="opacidadCapsulas" type="range" min="5" max="100" value="25">
+            </div>
+          </div>
+        </div>
 
-      <div class="fila">
-        <div><strong>Propiedades</strong> (detectadas de categories)</div>
-        <div id="propiedades"></div>
-      </div>
+        <!-- Sección: Conexiones -->
+        <div class="control-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-title">
+              <span class="section-icon">◇</span>
+              <span>Conexiones</span>
+            </div>
+            <span class="section-toggle">▼</span>
+          </div>
+          <div class="section-content">
+            <div class="control-group">
+              <div class="control-label">
+                <span>Máx. conexiones</span>
+                <span id="maxConexionesValor" class="control-value">2</span>
+              </div>
+              <input id="maxConexiones" type="range" min="1" max="6" value="2">
+            </div>
 
-      <div id="ayudaTeclas">
-        <strong>⌨️ Navegación (fly):</strong><br>
-        W/A/S/D: mover en plano XZ<br>
-        Q/E: subir / bajar<br>
-        🖱️ Ratón: mirar alrededor<br>
-        🖱️ Clic en nodo: zoom + detalle
-      </div>
+            <div class="checkbox-group">
+              <input id="chkMostrarLineas" type="checkbox" checked>
+              <label for="chkMostrarLineas">Mostrar conexiones</label>
+            </div>
 
-      <div class="seccion-titulo">📦 Gestión de Datos</div>
-      <button class="btn-action btn-export" id="btnExportJSON">📥 Exportar JSON</button>
-      <button class="btn-action btn-export" id="btnExportCSV">📊 Exportar CSV</button>
-      <button class="btn-action btn-import" id="btnImportJSON">📤 Importar JSON</button>
+            <div class="checkbox-group">
+              <input id="chkMostrarCapsulas" type="checkbox" checked>
+              <label for="chkMostrarCapsulas">Mostrar cápsulas</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sección: Propiedades -->
+        <div class="control-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-title">
+              <span class="section-icon">◐</span>
+              <span>Propiedades</span>
+            </div>
+            <span class="section-toggle">▼</span>
+          </div>
+          <div class="section-content">
+            <div id="propiedades"></div>
+          </div>
+        </div>
+
+        <!-- Sección: Navegación -->
+        <div class="control-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-title">
+              <span class="section-icon">◎</span>
+              <span>Controles</span>
+            </div>
+            <span class="section-toggle">▼</span>
+          </div>
+          <div class="section-content">
+            <div id="ayudaTeclas">
+              <strong>Teclado</strong>
+              W / A / S / D — Movimiento<br>
+              Q / E — Subir / Bajar<br>
+              <strong>Ratón</strong>
+              Arrastrar — Mirar alrededor<br>
+              Clic — Ver detalles
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Sección: Gestión de Datos -->
+        <div class="control-section">
+          <div class="section-header" onclick="toggleSection(this)">
+            <div class="section-title">
+              <span class="section-icon">◈</span>
+              <span>Datos</span>
+            </div>
+            <span class="section-toggle">▼</span>
+          </div>
+          <div class="section-content">
+            <button class="btn-action btn-export" id="btnExportJSON">
+              <span>↓</span>
+              <span>Exportar JSON</span>
+            </button>
+            <button class="btn-action btn-export" id="btnExportCSV">
+              <span>↓</span>
+              <span>Exportar CSV</span>
+            </button>
+            <button class="btn-action btn-import" id="btnImportJSON">
+              <span>↑</span>
+              <span>Importar JSON</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
     </div>
 
     <!-- Modal 2D -->
@@ -632,6 +1000,12 @@
 
     <script>
       const THREE = AFRAME.THREE;
+
+      // ===== FUNCIÓN PARA SECCIONES COLAPSABLES =====
+      function toggleSection(headerElement) {
+        const section = headerElement.parentElement;
+        section.classList.toggle('collapsed');
+      }
 
       // ===== SISTEMA DE NOTIFICACIONES TOAST =====
       const toastContainer = document.getElementById('toastContainer');
@@ -1161,6 +1535,41 @@
       function crearControlesPropiedades(claves){
         divPropiedades.innerHTML = "";
         clavesPropiedades = claves.slice();
+
+        // Actualizar contador en el título de la sección
+        const seccionPropiedades = document.querySelector('.control-section:has(#propiedades)');
+        if (seccionPropiedades) {
+          const tituloSpan = seccionPropiedades.querySelector('.section-title span:last-child');
+          if (tituloSpan) {
+            let contadorBadge = tituloSpan.querySelector('.prop-counter');
+            if (claves.length > 0) {
+              if (!contadorBadge) {
+                contadorBadge = document.createElement('span');
+                contadorBadge.className = 'prop-counter';
+                tituloSpan.appendChild(contadorBadge);
+              }
+              contadorBadge.textContent = claves.length;
+            } else if (contadorBadge) {
+              contadorBadge.remove();
+            }
+          }
+        }
+
+        if (claves.length === 0) {
+          // Mostrar mensaje cuando no hay propiedades
+          const mensaje = document.createElement('div');
+          mensaje.style.cssText = `
+            padding: 30px 20px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 12px;
+            font-style: italic;
+          `;
+          mensaje.textContent = 'No hay propiedades detectadas';
+          divPropiedades.appendChild(mensaje);
+          etiquetasSucias = true;
+          return;
+        }
 
         clavesPropiedades.forEach((prop, index) => {
           if (!(prop in usarEnRelacion))    usarEnRelacion[prop] = true;
