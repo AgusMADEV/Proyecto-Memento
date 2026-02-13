@@ -804,6 +804,138 @@
           opacity: 0;
         }
       }
+
+      /* ===== PANEL DE ESTADÍSTICAS LIVE - Frosted Style ===== */
+      #estadisticas {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 280px;
+        padding: 0;
+        
+        /* Efecto frosted glass */
+        background: rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(40px) saturate(180%);
+        -webkit-backdrop-filter: blur(40px) saturate(180%);
+        
+        border: 0.5px solid rgba(255, 255, 255, 0.18);
+        border-radius: 16px;
+        box-shadow: 
+          0 8px 32px rgba(0, 0, 0, 0.12),
+          0 2px 8px rgba(0, 0, 0, 0.08),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+        
+        font-size: 13px;
+        z-index: 9;
+        color: #ffffff;
+        
+        /* Animación de entrada */
+        animation: slideInDown 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .stats-header {
+        padding: 16px 20px;
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+        border-radius: 16px 16px 0 0;
+      }
+
+      .stats-title {
+        font-size: 14px;
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.95);
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        letter-spacing: -0.2px;
+      }
+
+      .stats-content {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 14px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 0.5px solid rgba(255, 255, 255, 0.08);
+        border-radius: 10px;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        animation: fadeIn 0.5s ease-out;
+      }
+
+      .stat-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 255, 255, 0.15);
+        transform: translateY(-2px);
+      }
+
+      .stat-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 12px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .stat-icon {
+        font-size: 16px;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        flex-shrink: 0;
+      }
+
+      .stat-icon.nodes {
+        background: rgba(96, 165, 250, 0.2);
+        color: rgba(96, 165, 250, 1);
+      }
+
+      .stat-icon.connections {
+        background: rgba(52, 211, 153, 0.2);
+        color: rgba(52, 211, 153, 1);
+      }
+
+      .stat-icon.properties {
+        background: rgba(168, 85, 247, 0.2);
+        color: rgba(168, 85, 247, 1);
+      }
+
+      .stat-icon.fps {
+        background: rgba(251, 191, 36, 0.2);
+        color: rgba(251, 191, 36, 1);
+      }
+
+      .stat-value {
+        font-size: 18px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.95);
+        letter-spacing: -0.5px;
+        min-width: 50px;
+        text-align: right;
+        transition: all 0.3s ease;
+      }
+
+      .stat-value.updating {
+        animation: pulse 0.3s ease;
+      }
+
+      .stat-unit {
+        font-size: 11px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.5);
+        margin-left: 4px;
+      }
     </style>
   </head>
   <body>
@@ -812,6 +944,49 @@
 
     <!-- Contenedor de Notificaciones Toast -->
     <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Panel de Estadísticas Live -->
+    <div id="estadisticas">
+      <div class="stats-header">
+        <h2 class="stats-title">
+          <span>📊</span>
+          <span>Estadísticas Live</span>
+        </h2>
+      </div>
+      <div class="stats-content">
+        <div class="stat-item">
+          <div class="stat-label">
+            <div class="stat-icon nodes">●</div>
+            <span>Nodos</span>
+          </div>
+          <div class="stat-value" id="statNodos">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">
+            <div class="stat-icon connections">═</div>
+            <span>Conexiones</span>
+          </div>
+          <div class="stat-value" id="statConexiones">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">
+            <div class="stat-icon properties">◆</div>
+            <span>Propiedades</span>
+          </div>
+          <div class="stat-value" id="statPropiedades">0</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">
+            <div class="stat-icon fps">○</div>
+            <span>FPS</span>
+          </div>
+          <div class="stat-value" id="statFPS">
+            <span id="statFPSValor">60</span>
+            <span class="stat-unit">fps</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Input file oculto para importar -->
     <input type="file" id="fileInput" accept=".json" style="display: none;">
@@ -1273,7 +1448,11 @@
         setTimeout(() => {
           conexionesActivadas = true;
           actualizarConexiones();
+          actualizarEstadisticas();
         }, tiempoAnimacionTotal);
+        
+        // Actualizar estadísticas iniciales
+        actualizarEstadisticas();
         
         mostrarToast('🔄 Escena recargada con nuevos datos', 'info', 3000);
       }
@@ -1620,6 +1799,7 @@
               p.fija = false;
               p.estableFrames = 0;
             });
+            actualizarEstadisticas();
           });
           lblUsar.appendChild(chkUsar);
           lblUsar.appendChild(document.createTextNode(" Usar en relación"));
@@ -2031,10 +2211,66 @@
       let ultimoTiempo = null;
       let contadorFrames = 0;
 
+      // ---------- Estadísticas Live ----------
+      let fps = 60;
+      let frameCount = 0;
+      let lastFpsUpdate = 0;
+      let ultimasConexiones = 0;
+      
+      function actualizarEstadisticas() {
+        // Actualizar nodos
+        const statNodos = document.getElementById('statNodos');
+        if (statNodos && statNodos.textContent !== String(numeroParticulas)) {
+          statNodos.textContent = numeroParticulas;
+          statNodos.classList.add('updating');
+          setTimeout(() => statNodos.classList.remove('updating'), 300);
+        }
+        
+        // Actualizar conexiones
+        const numConexiones = conexionesEl ? conexionesEl.children.length : 0;
+        const statConexiones = document.getElementById('statConexiones');
+        if (statConexiones && numConexiones !== ultimasConexiones) {
+          statConexiones.textContent = numConexiones;
+          statConexiones.classList.add('updating');
+          setTimeout(() => statConexiones.classList.remove('updating'), 300);
+          ultimasConexiones = numConexiones;
+        }
+        
+        // Actualizar propiedades habilitadas
+        const propsHabilitadas = Object.values(usarEnRelacion).filter(v => v).length;
+        const statPropiedades = document.getElementById('statPropiedades');
+        if (statPropiedades && statPropiedades.textContent !== String(propsHabilitadas)) {
+          statPropiedades.textContent = propsHabilitadas;
+          statPropiedades.classList.add('updating');
+          setTimeout(() => statPropiedades.classList.remove('updating'), 300);
+        }
+        
+        // FPS se actualiza en el bucle principal
+      }
+      
+      function actualizarFPSDisplay() {
+        const statFPSValor = document.getElementById('statFPSValor');
+        if (statFPSValor) {
+          const fpsRedondeado = Math.round(fps);
+          if (statFPSValor.textContent !== String(fpsRedondeado)) {
+            statFPSValor.textContent = fpsRedondeado;
+          }
+        }
+      }
+
       function bucle(tiempoMs){
         if (!ultimoTiempo) ultimoTiempo = tiempoMs;
         const dt = (tiempoMs - ultimoTiempo) / 1000;
         ultimoTiempo = tiempoMs;
+
+        // Calcular FPS
+        frameCount++;
+        if (tiempoMs - lastFpsUpdate >= 500) { // Actualizar cada 500ms
+          fps = frameCount / ((tiempoMs - lastFpsUpdate) / 1000);
+          frameCount = 0;
+          lastFpsUpdate = tiempoMs;
+          actualizarFPSDisplay();
+        }
 
         pasoFisica(dt);
         actualizarFly(dt);
@@ -2043,6 +2279,7 @@
         contadorFrames++;
         if (contadorFrames % ACTUALIZAR_LINEAS_CADA === 0){
           actualizarConexiones();
+          actualizarEstadisticas(); // Actualizar estadísticas cuando se actualizan conexiones
         }
 
         requestAnimationFrame(bucle);
@@ -2082,7 +2319,11 @@
           setTimeout(() => {
             conexionesActivadas = true;
             actualizarConexiones(); // Dibujar conexiones por primera vez
+            actualizarEstadisticas(); // Actualizar estadísticas iniciales
           }, tiempoAnimacionTotal);
+          
+          // Actualizar estadísticas de nodos inmediatamente
+          actualizarEstadisticas();
           
           requestAnimationFrame(bucle);
         })

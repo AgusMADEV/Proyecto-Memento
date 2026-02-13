@@ -10,7 +10,7 @@
 ✅ Export CSV - Exportación a Excel/Sheets
 ❌ Formulario dinámico - 7 campos validados
 ✅ Notificaciones toast - Feedback visual
-❌ Estadísticas live - 4 métricas actualizadas
+✅ Estadísticas live - 4 métricas actualizadas
 ❌ Física optimizada - Con detección de estabilidad
 
 🎨 ESTÉTICAS
@@ -86,6 +86,24 @@ Sistema de 5 luces **animadas** con colores temáticos que pulsan al ritmo del s
 - Colores extraídos del sistema de toasts para coherencia temática
 - Posicionamiento 3D estratégico para iluminación envolvente
 - **Efecto "respiración" continuo** que da vida a la escena
+
+### 📊 Panel de Estadísticas Live
+
+Panel en tiempo real con 4 métricas clave del sistema:
+
+- **🔵 Nodos Activos** - Total de elementos/partículas en la escena
+- **🟢 Conexiones Dibujadas** - Líneas activas entre nodos relacionados
+- **🟣 Propiedades Habilitadas** - Categorías usadas para crear relaciones
+- **🟡 FPS (Rendimiento)** - Frames por segundo de la escena 3D
+
+**Características del panel:**
+- Posicionado en esquina superior derecha para no obstruir
+- Estilo glassmorphism integrado con el tema
+- Actualización automática en tiempo real
+- Animaciones suaves al cambiar valores
+- Iconos y colores distintivos para cada métrica
+- FPS actualizado cada 500ms para medición precisa
+- Efecto visual de pulso al actualizar valores
 
 ## 🗂️ Archivos de Ejemplo Incluidos
 
